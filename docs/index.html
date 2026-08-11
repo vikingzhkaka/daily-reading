@@ -27,7 +27,6 @@
   }
   #toggleCal:hover{background:var(--accent-soft); border-color:var(--accent)}
   .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
-  /* 周条 */
   .dow{display:grid; grid-template-columns:repeat(7,32px); gap:4px; justify-content:center; margin-bottom:6px}
   .dow span{text-align:center; font-size:11px; color:var(--muted)}
   .strip{display:flex; gap:14px; overflow-x:auto; padding:2px 1px 6px; scroll-behavior:smooth; -webkit-overflow-scrolling:touch}
@@ -50,11 +49,9 @@
   .wday .dots{display:flex; gap:2px; justify-content:center; height:6px}
   .wday .dot{width:6px; height:6px; border-radius:50%}
   .hint{font-size:11px; color:var(--muted); text-align:center; margin-top:4px}
-  /* 类型切换 */
   .tabs{display:flex; gap:8px; margin:10px 2px 0}
   .tabs .tab{border:1px solid var(--line); background:#fff; border-radius:8px; padding:5px 13px; font-size:13px; cursor:pointer; color:var(--ink)}
   .tabs .tab.on{background:var(--ink); color:#fff; border-color:var(--ink)}
-  /* 内容 */
   #subtitle{font-size:15px; color:var(--muted); margin:6px 2px 4px}
   #content{margin-top:8px}
   #content h1{font-size:21px; margin:6px 0 14px}
@@ -62,12 +59,17 @@
   #content p{margin:0 0 12px}
   #content audio{width:100%; margin:10px 0 16px}
   #content .ph{color:var(--muted)}
+  #content textarea{width:100%; min-height:160px; border:1px solid var(--line); border-radius:10px; padding:12px; font-size:15px; font-family:inherit; line-height:1.6; resize:vertical}
+  #content .btn{border:1px solid var(--accent); background:var(--accent); color:#fff; border-radius:10px; padding:9px 18px; font-size:14px; cursor:pointer; margin-top:10px}
+  #content .btn:disabled{opacity:.5; cursor:default}
+  #content .status{font-size:13px; color:var(--muted); margin-top:8px}
   .legend{display:flex; gap:14px; font-size:12px; color:var(--muted); margin:8px 2px 0; justify-content:center; flex-wrap:wrap}
   .legend i{display:inline-block; width:11px; height:11px; border-radius:3px; vertical-align:-1px; margin-right:4px}
   .legend .g{background:#fafbfc; border:1px solid var(--line)}
   .legend .reading{background:var(--reading)}
   .legend .translation{background:var(--translation)}
   .legend .writing{background:var(--writing)}
+  .legend .todo{border:1px dashed var(--translation)}
 </style>
 </head>
 <body>
@@ -86,6 +88,7 @@
       <span><i class="reading"></i>阅读</span>
       <span><i class="translation"></i>翻译</span>
       <span><i class="writing"></i>写作</span>
+      <span><i class="todo"></i>待做</span>
       <span><i class="g"></i>无记录</span>
     </div>
   </div>
@@ -99,12 +102,16 @@
 const avail = new Set();
 let articles = [];
 let byDate = {};
+let exercises = {};   // date -> {title, source_cn, ref_en, topic_tags}
+let answers = {};     // date -> {answer, submitted_at, result?}
 let curY, curM, selectedDate = null, selectedType = null;
 const cal = document.getElementById('cal');
 const calCard = document.getElementById('calCard');
 const toggleCal = document.getElementById('toggleCal');
 const tabsEl = document.getElementById('tabs');
 let calVisible = false;
+const SUBMIT_URL = (location.hostname === '127.0.0.1' || location.hostname === 'localhost')
+  ? 'http://127.0.0.1:8787/submit' : '/api/submit';
 const pad = n => (n < 10 ? '0' + n : '' + n);
 const fmt = dt => dt.getFullYear() + '-' + pad(dt.getMonth()+1) + '-' + pad(dt.getDate());
 const TYPE_LABEL = {reading:'阅读', translation:'翻译', writing:'写作'};
@@ -119,7 +126,6 @@ toggleCal.onclick = () => {
   if(calVisible) scrollToCurrentWeek();
 };
 
-// 周一为一周起点
 function weekStart(d){
   const day = d.getDay();
   const diff = (day === 0) ? -6 : (1 - day);
@@ -128,7 +134,6 @@ function weekStart(d){
   return s;
 }
 function addWeeks(d, n){ const r = new Date(d); r.setDate(r.getDate() + 7*n); return r; }
-
 const WEEK_BEFORE = 12, WEEK_AFTER = 6;
 
 function renderCal(){
@@ -153,8 +158,11 @@ function renderCal(){
       if(types.length){
         dots = '<div class="dots">' + types.map(t =>
           '<i class="dot" style="background:'+TYPE_COLOR[t]+'"></i>').join('') + '</div>';
+      } else if(exercises[ds] && !answers[ds]){
+        // 有题待做：虚线橙点
+        dots = '<div class="dots"><i class="dot" style="background:transparent;border:1px dashed '+TYPE_COLOR.translation+'"></i></div>';
       }
-      const attr = avail.has(ds) ? ' data-date="'+ds+'"' : '';
+      const attr = (avail.has(ds)||exercises[ds]) ? ' data-date="'+ds+'"' : '';
       row += '<div class="'+cls.join(' ')+'"'+attr+'>'+dd.getDate()+dots+'</div>';
     }
     row += '</div>';
@@ -171,7 +179,7 @@ function scrollToCurrentWeek(){
 }
 
 cal.addEventListener('click', e=>{
-  const t = e.target.closest('.wday.has');
+  const t = e.target.closest('.wday.has, .wday[data-date]');
   if(t && t.dataset.date) loadArticle(t.dataset.date);
 });
 
@@ -195,6 +203,60 @@ function metaLine(a){
   return '';
 }
 
+// ---- 翻译作答闭环 ----
+function renderTranslation(date){
+  const ex = exercises[date];
+  const ans = answers[date];
+  if(!ex){
+    document.getElementById('content').innerHTML =
+      '<p class="ph">这天没有翻译题。点「选择日期」看其他有记录的日期，或在页面上「出新题」。</p>';
+    return;
+  }
+  if(ans && ans.result){
+    // 已批改：展示三层对照（直接渲染后端写回的 HTML）
+    document.getElementById('content').innerHTML = ans.result.html ||
+      '<p class="ph">批改结果格式异常。</p>';
+    return;
+  }
+  // 待做：原题 + 作答框
+  const prefill = ans ? (ans.answer||'') : '';
+  document.getElementById('content').innerHTML =
+    '<h2>原题（中文）</h2><p>'+ escapeHtml(ex.source_cn) +'</p>'+
+    '<h2>你的译文</h2>'+
+    '<textarea id="ta" placeholder="在此用英文翻译上面的段落…">'+ escapeHtml(prefill) +'</textarea>'+
+    '<button class="btn" id="submitBtn">提交作答</button>'+
+    '<div class="status" id="status"></div>';
+  document.getElementById('submitBtn').onclick = () => submitAnswer(date);
+}
+
+async function submitAnswer(date){
+  const ta = document.getElementById('ta');
+  const btn = document.getElementById('submitBtn');
+  const st = document.getElementById('status');
+  const text = ta.value.trim();
+  if(!text){ st.textContent = '先写点什么再提交～'; return; }
+  btn.disabled = true; st.textContent = '提交中…';
+  try{
+    const res = await fetch(SUBMIT_URL, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({date:date, answer:text})
+    });
+    const j = await res.json();
+    if(!j.ok) throw new Error(j.error||'提交失败');
+    answers[date] = answers[date] || {};
+    answers[date].answer = text;
+    st.textContent = '已提交！批改会在下一次同步时（通常几分钟内）出现，刷新页面即可看到。';
+    btn.textContent = '已提交，等待批改';
+  }catch(e){
+    st.textContent = '提交失败：'+e.message;
+    btn.disabled = false;
+  }
+}
+
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
 async function loadArticle(date, type){
   selectedDate = date;
   const list = byDate[date] || [];
@@ -203,6 +265,12 @@ async function loadArticle(date, type){
   renderCal();
   renderTabs(date, type);
   const a = list.find(x => x.type === type);
+  if(type === 'translation'){
+    document.getElementById('subtitle').textContent = date + ' · 翻译';
+    renderTranslation(date);
+    window.scrollTo({top:0, behavior:'smooth'});
+    return;
+  }
   document.getElementById('subtitle').textContent = date + ' · ' + TYPE_LABEL[type] + metaLine(a);
   try{
     const res = await fetch('articles/' + date + '.' + type + '.html');
@@ -234,14 +302,28 @@ async function init(){
     });
   }catch(err){
     document.getElementById('content').innerHTML = '<p class="ph">清单加载失败（dates.json）。</p>';
-    return;
   }
+  // 载入题目与作答
+  try{
+    const exr = await fetch('exercises/index.json');
+    if(exr.ok){
+      const exlist = await exr.json();
+      exlist.forEach(e => { exercises[e.date] = e; });
+    }
+  }catch(e){}
+  try{
+    const ansr = await fetch('answers/index.json');
+    if(ansr.ok){
+      const anslist = await ansr.json();
+      anslist.forEach(a => { answers[a.date] = a; });
+    }
+  }catch(e){}
   const now = new Date();
   curY = now.getFullYear(); curM = now.getMonth();
   let target = null, targetType = null;
   const parts = location.hash.replace('#','').split('/');
   const hashDate = parts[0], hashType = parts[1];
-  if(hashDate && avail.has(hashDate)){ target = hashDate; targetType = hashType; }
+  if(hashDate && (avail.has(hashDate)||exercises[hashDate])){ target = hashDate; targetType = hashType; }
   else if(avail.has(fmt(now))){ target = fmt(now); }
   else if(articles.length){ target = articles[0].date; }
   renderCal();
