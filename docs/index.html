@@ -26,6 +26,9 @@
     padding:7px 13px; font-size:14px; color:var(--ink); cursor:pointer; margin-bottom:12px
   }
   #toggleCal:hover{background:var(--accent-soft); border-color:var(--accent)}
+  #newEx{margin-bottom:12px; margin-left:8px; border:1px solid var(--translation); background:#fff; color:var(--translation); border-radius:10px; padding:7px 13px; font-size:14px; cursor:pointer}
+  #newEx:hover{background:#fdeede}
+  #newEx:disabled{opacity:.5; cursor:default}
   .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
   .dow{display:grid; grid-template-columns:repeat(7,32px); gap:4px; justify-content:center; margin-bottom:6px}
   .dow span{text-align:center; font-size:11px; color:var(--muted)}
@@ -80,6 +83,7 @@
   </header>
 
   <button id="toggleCal">选择日期 ▾</button>
+  <button id="newEx" class="newex">＋ 出新题</button>
   <div id="calCard" class="card" style="display:none">
     <div class="dow"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
     <div id="cal" class="strip"></div>
@@ -110,8 +114,11 @@ const calCard = document.getElementById('calCard');
 const toggleCal = document.getElementById('toggleCal');
 const tabsEl = document.getElementById('tabs');
 let calVisible = false;
+const CLOUD_BASE = 'https://translation-worker.vikingzh.workers.dev';
 const SUBMIT_URL = (location.hostname === '127.0.0.1' || location.hostname === 'localhost')
-  ? 'http://127.0.0.1:8787/submit' : '/api/submit';
+  ? 'http://127.0.0.1:8787/submit' : CLOUD_BASE + '/api/submit';
+const NEW_EX_URL = (location.hostname === '127.0.0.1' || location.hostname === 'localhost')
+  ? 'http://127.0.0.1:8787/new-exercise' : CLOUD_BASE + '/api/new-exercise';
 const pad = n => (n < 10 ? '0' + n : '' + n);
 const fmt = dt => dt.getFullYear() + '-' + pad(dt.getMonth()+1) + '-' + pad(dt.getDate());
 const TYPE_LABEL = {reading:'阅读', translation:'翻译', writing:'写作'};
@@ -245,7 +252,7 @@ async function submitAnswer(date){
     if(!j.ok) throw new Error(j.error||'提交失败');
     answers[date] = answers[date] || {};
     answers[date].answer = text;
-    st.textContent = '已提交！批改会在下一次同步时（通常几分钟内）出现，刷新页面即可看到。';
+    st.textContent = '已提交！AI 批改会在下次每日同步（每天 12:00）自动完成，届时刷新页面即可看到三层对照 + 参考译文音频。';
     btn.textContent = '已提交，等待批改';
   }catch(e){
     st.textContent = '提交失败：'+e.message;
@@ -256,6 +263,35 @@ async function submitAnswer(date){
 function escapeHtml(s){
   return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+
+// ---- 出新题（从真题库随机抽，写 GitHub，由 Worker 完成）----
+async function newExercise(){
+  const today = fmt(new Date());
+  if(exercises[today]){
+    const st = document.getElementById('status');
+    if(st) st.textContent = '';
+    loadArticle(today, 'translation');
+    return;
+  }
+  const btn = document.getElementById('newEx');
+  btn.disabled = true; const oldTxt = btn.textContent; btn.textContent = '出题中…';
+  try{
+    const res = await fetch(NEW_EX_URL, {
+      method:'POST', headers:{'Content-Type':'application/json'}
+    });
+    const j = await res.json();
+    if(!j.ok) throw new Error((j.msg)||'出题失败');
+    exercises[today] = j.exercise;
+    renderCal();
+    loadArticle(today, 'translation');
+  }catch(e){
+    alert('出题失败：' + e.message + '\n（请确认网络可访问 workers.dev，或稍后重试）');
+  }finally{
+    btn.disabled = false; btn.textContent = oldTxt;
+  }
+}
+const newExBtn = document.getElementById('newEx');
+if(newExBtn) newExBtn.onclick = () => newExercise();
 
 async function loadArticle(date, type){
   selectedDate = date;
