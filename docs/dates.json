@@ -4,12 +4,21 @@
     {
       "date": "2026-08-11",
       "new": 50,
-      "review": 70
+      "review": 70,
+      "type": "reading"
     },
     {
       "date": "2026-08-10",
       "new": 73,
-      "review": 47
+      "review": 47,
+      "type": "reading"
+    },
+    {
+      "date": "2026-08-09",
+      "type": "translation",
+      "title": "翻译练习 · 太极拳（Tai Chi）",
+      "your_words": 56,
+      "ref_words": 68
     }
   ]
 }

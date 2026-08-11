@@ -4,11 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <base href="/daily-reading/" />
-<title>每日阅读 · 英语学习文章与音频</title>
+<title>每日学习 · 阅读 / 翻译 / 写作</title>
 <style>
   :root{
     --bg:#f7f8fa; --card:#ffffff; --ink:#1a1a1a; --muted:#9aa0a6;
     --line:#e3e6ea; --accent:#2b7a4b; --accent-soft:#e8f3ec;
+    --reading:#2f6fed; --translation:#e8842b; --writing:#8b5cf6;
   }
   *{box-sizing:border-box}
   body{
@@ -27,7 +28,7 @@
   #toggleCal:hover{background:var(--accent-soft); border-color:var(--accent)}
   .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
   /* 周条 */
-  .dow{display:grid; grid-template-columns:repeat(7,30px); gap:4px; justify-content:center; margin-bottom:6px}
+  .dow{display:grid; grid-template-columns:repeat(7,32px); gap:4px; justify-content:center; margin-bottom:6px}
   .dow span{text-align:center; font-size:11px; color:var(--muted)}
   .strip{display:flex; gap:14px; overflow-x:auto; padding:2px 1px 6px; scroll-behavior:smooth; -webkit-overflow-scrolling:touch}
   .strip::-webkit-scrollbar{height:6px}
@@ -36,35 +37,44 @@
   .wklabel{font-size:10px; color:var(--muted); white-space:nowrap}
   .wkrow{display:flex; gap:4px}
   .wday{
-    width:30px; height:30px; border-radius:8px; font-size:12px;
-    display:flex; align-items:center; justify-content:center; user-select:none
+    width:32px; height:38px; border-radius:8px; font-size:12px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+    user-select:none; padding-top:2px
   }
   .wday.other{visibility:hidden}
   .wday.none{color:#cfd3d8; background:#fafbfc}
   .wday.has{color:var(--ink); background:#fff; border:1px solid var(--line); cursor:pointer}
   .wday.has:hover{background:var(--accent-soft); border-color:var(--accent)}
   .wday.today{outline:2px solid var(--accent); outline-offset:-2px}
-  .wday.sel{background:var(--accent)!important; color:#fff!important; border-color:var(--accent)!important}
+  .wday.sel{background:var(--ink)!important; color:#fff!important; border-color:var(--ink)!important}
+  .wday .dots{display:flex; gap:2px; justify-content:center; height:6px}
+  .wday .dot{width:6px; height:6px; border-radius:50%}
   .hint{font-size:11px; color:var(--muted); text-align:center; margin-top:4px}
+  /* 类型切换 */
+  .tabs{display:flex; gap:8px; margin:10px 2px 0}
+  .tabs .tab{border:1px solid var(--line); background:#fff; border-radius:8px; padding:5px 13px; font-size:13px; cursor:pointer; color:var(--ink)}
+  .tabs .tab.on{background:var(--ink); color:#fff; border-color:var(--ink)}
   /* 内容 */
-  #subtitle{font-size:15px; color:var(--muted); margin:6px 2px 8px}
+  #subtitle{font-size:15px; color:var(--muted); margin:6px 2px 4px}
   #content{margin-top:8px}
   #content h1{font-size:21px; margin:6px 0 14px}
   #content h2{font-size:17px; margin:22px 0 8px; color:#333}
   #content p{margin:0 0 12px}
   #content audio{width:100%; margin:10px 0 16px}
   #content .ph{color:var(--muted)}
-  .legend{display:flex; gap:16px; font-size:12px; color:var(--muted); margin:8px 2px 0; justify-content:center}
+  .legend{display:flex; gap:14px; font-size:12px; color:var(--muted); margin:8px 2px 0; justify-content:center; flex-wrap:wrap}
   .legend i{display:inline-block; width:11px; height:11px; border-radius:3px; vertical-align:-1px; margin-right:4px}
-  .legend .b{background:#fff; border:1px solid var(--line)}
   .legend .g{background:#fafbfc; border:1px solid var(--line)}
+  .legend .reading{background:var(--reading)}
+  .legend .translation{background:var(--translation)}
+  .legend .writing{background:var(--writing)}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>每日阅读</h1>
-    <p class="sub">英语学习文章与朗读音频 · 按日期回看</p>
+    <h1>每日学习</h1>
+    <p class="sub">阅读 · 翻译 · 写作 — 按日期回看</p>
   </header>
 
   <button id="toggleCal">选择日期 ▾</button>
@@ -73,11 +83,14 @@
     <div id="cal" class="strip"></div>
     <div class="hint">← 滑动查看其它周 →</div>
     <div class="legend">
-      <span><i class="b"></i>有记录</span>
+      <span><i class="reading"></i>阅读</span>
+      <span><i class="translation"></i>翻译</span>
+      <span><i class="writing"></i>写作</span>
       <span><i class="g"></i>无记录</span>
     </div>
   </div>
 
+  <div id="tabs" class="tabs"></div>
   <div id="subtitle"></div>
   <div id="content"></div>
 </div>
@@ -85,13 +98,17 @@
 <script>
 const avail = new Set();
 let articles = [];
-let curY, curM, selectedDate = null;
+let byDate = {};
+let curY, curM, selectedDate = null, selectedType = null;
 const cal = document.getElementById('cal');
 const calCard = document.getElementById('calCard');
 const toggleCal = document.getElementById('toggleCal');
+const tabsEl = document.getElementById('tabs');
 let calVisible = false;
 const pad = n => (n < 10 ? '0' + n : '' + n);
 const fmt = dt => dt.getFullYear() + '-' + pad(dt.getMonth()+1) + '-' + pad(dt.getDate());
+const TYPE_LABEL = {reading:'阅读', translation:'翻译', writing:'写作'};
+const TYPE_COLOR = {reading:'#2f6fed', translation:'#e8842b', writing:'#8b5cf6'};
 
 function updateToggle(){
   toggleCal.textContent = calVisible ? '收起日期 ▴' : '选择日期 ▾';
@@ -104,7 +121,7 @@ toggleCal.onclick = () => {
 
 // 周一为一周起点
 function weekStart(d){
-  const day = d.getDay(); // 0=Sun
+  const day = d.getDay();
   const diff = (day === 0) ? -6 : (1 - day);
   const s = new Date(d); s.setDate(d.getDate() + diff);
   s.setHours(0,0,0,0);
@@ -131,8 +148,14 @@ function renderCal(){
       if(!avail.has(ds)) cls.push('none'); else cls.push('has');
       if(ds === todayStr) cls.push('today');
       if(ds === selectedDate) cls.push('sel');
+      let dots = '';
+      const types = (byDate[ds]||[]).map(a=>a.type);
+      if(types.length){
+        dots = '<div class="dots">' + types.map(t =>
+          '<i class="dot" style="background:'+TYPE_COLOR[t]+'"></i>').join('') + '</div>';
+      }
       const attr = avail.has(ds) ? ' data-date="'+ds+'"' : '';
-      row += '<div class="'+cls.join(' ')+'"'+attr+'>'+dd.getDate()+'</div>';
+      row += '<div class="'+cls.join(' ')+'"'+attr+'>'+dd.getDate()+dots+'</div>';
     }
     row += '</div>';
     html += '<div class="week" data-ws="'+fmt(w)+'"><div class="wklabel">'+label+'</div>'+row+'</div>';
@@ -152,27 +175,51 @@ cal.addEventListener('click', e=>{
   if(t && t.dataset.date) loadArticle(t.dataset.date);
 });
 
-async function loadArticle(date){
+function renderTabs(date, type){
+  const list = byDate[date] || [];
+  if(list.length <= 1){ tabsEl.innerHTML = ''; return; }
+  tabsEl.innerHTML = list.map(a =>
+    '<button class="tab'+(a.type===type?' on':'')+'" data-type="'+a.type+'">'+TYPE_LABEL[a.type]+'</button>'
+  ).join('');
+}
+tabsEl.addEventListener('click', e=>{
+  const t = e.target.closest('.tab');
+  if(t) loadArticle(selectedDate, t.dataset.type);
+});
+
+function metaLine(a){
+  if(!a) return '';
+  if(a.type === 'reading') return ' · 新学 ' + a.new + ' / 复习 ' + a.review;
+  if(a.type === 'translation') return ' · 你的 ' + (a.your_words||'?') + ' 词 / 参考 ' + (a.ref_words||'?') + ' 词';
+  if(a.type === 'writing') return ' · ' + (a.words||'?') + ' 词';
+  return '';
+}
+
+async function loadArticle(date, type){
   selectedDate = date;
+  const list = byDate[date] || [];
+  if(!type) type = (list.find(a=>a.type==='reading') || list[0] || {}).type;
+  selectedType = type;
   renderCal();
-  const a = articles.find(x => x.date === date);
-  const meta = a ? (' · 新学 ' + a.new + ' / 复习 ' + a.review) : '';
-  document.getElementById('subtitle').textContent = date + meta;
+  renderTabs(date, type);
+  const a = list.find(x => x.type === type);
+  document.getElementById('subtitle').textContent = date + ' · ' + TYPE_LABEL[type] + metaLine(a);
   try{
-    const res = await fetch('articles/' + date + '.html');
+    const res = await fetch('articles/' + date + '.' + type + '.html');
     if(!res.ok) throw new Error('not found');
     document.getElementById('content').innerHTML = await res.text();
-    location.hash = date;
+    location.hash = date + '/' + type;
   }catch(err){
-    document.getElementById('content').innerHTML = '<p class="ph">加载失败：' + date + '</p>';
+    document.getElementById('content').innerHTML = '<p class="ph">加载失败：' + date + ' / ' + type + '</p>';
   }
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
 function showPlaceholder(){
+  tabsEl.innerHTML = '';
   document.getElementById('subtitle').textContent = '';
   document.getElementById('content').innerHTML =
-    '<p class="ph">今日文章尚未生成。点「选择日期」展开周历，滑动查看黑色有记录日期。</p>';
+    '<p class="ph">今日内容尚未生成。点「选择日期」展开周历，滑动查看有记录的日期（彩色圆点表示练习类型）。</p>';
 }
 
 async function init(){
@@ -180,21 +227,26 @@ async function init(){
     const res = await fetch('dates.json');
     const data = await res.json();
     articles = data.articles || [];
-    articles.forEach(a => avail.add(a.date));
+    articles.forEach(a => {
+      a.type = a.type || 'reading';
+      (byDate[a.date] = byDate[a.date] || []).push(a);
+      avail.add(a.date);
+    });
   }catch(err){
     document.getElementById('content').innerHTML = '<p class="ph">清单加载失败（dates.json）。</p>';
     return;
   }
   const now = new Date();
   curY = now.getFullYear(); curM = now.getMonth();
-  let target = null;
-  const hash = location.hash.replace('#','');
-  if(hash && avail.has(hash)) target = hash;
-  else if(avail.has(fmt(now))) target = fmt(now);
-  else if(articles.length) target = articles[0].date;
+  let target = null, targetType = null;
+  const parts = location.hash.replace('#','').split('/');
+  const hashDate = parts[0], hashType = parts[1];
+  if(hashDate && avail.has(hashDate)){ target = hashDate; targetType = hashType; }
+  else if(avail.has(fmt(now))){ target = fmt(now); }
+  else if(articles.length){ target = articles[0].date; }
   renderCal();
   updateToggle();
-  if(target) loadArticle(target); else showPlaceholder();
+  if(target) loadArticle(target, targetType); else showPlaceholder();
 }
 init();
 </script>
