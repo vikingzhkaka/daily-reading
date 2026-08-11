@@ -1,0 +1,7 @@
+name = "translation-worker"
+main = "translation-worker.js"
+compatibility_date = "2024-09-23"
+
+# 凭证通过环境变量注入（部署时从本地 .env 读取，不进仓库）
+vars = { REPO_OWNER = "vikingzhkaka", REPO_NAME = "daily-reading" }
+# GH_PAT 为 secret，已用 `wrangler secret put` 注入，不写在此文件
