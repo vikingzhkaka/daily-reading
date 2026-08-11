@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>每日阅读 · 英语学习文章与音频</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#ffffff; --ink:#1a1a1a; --muted:#9aa0a6;
+    --line:#e3e6ea; --accent:#2b7a4b; --accent-soft:#e8f3ec;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",
+      "Helvetica Neue",Arial,sans-serif; line-height:1.65;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:24px 16px 64px}
+  header h1{font-size:22px; margin:0 0 2px}
+  header .sub{color:var(--muted); font-size:14px; margin:0 0 18px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  /* 日历 */
+  .cal-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px}
+  .cal-head span{font-weight:600; font-size:16px}
+  .cal-head button{
+    width:34px; height:34px; border:1px solid var(--line); background:#fff;
+    border-radius:9px; font-size:18px; cursor:pointer; color:var(--ink)
+  }
+  .cal-head button:hover{background:var(--accent-soft)}
+  .weekrow,.grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px}
+  .weekrow{margin-bottom:6px}
+  .weekrow span{text-align:center; font-size:12px; color:var(--muted)}
+  .day{
+    aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
+    border-radius:9px; font-size:14px; user-select:none
+  }
+  .day.other{visibility:hidden}
+  .day.none{color:#cfd3d8; background:#fafbfc}
+  .day.has{color:var(--ink); background:#fff; border:1px solid var(--line); cursor:pointer}
+  .day.has:hover{background:var(--accent-soft); border-color:var(--accent)}
+  .day.today{outline:2px solid var(--accent); outline-offset:-2px}
+  .day.sel{background:var(--accent)!important; color:#fff!important; border-color:var(--accent)!important}
+  /* 内容 */
+  #subtitle{font-size:15px; color:var(--muted); margin:18px 2px 6px}
+  #content{margin-top:8px}
+  #content h1{font-size:21px; margin:6px 0 14px}
+  #content h2{font-size:17px; margin:22px 0 8px; color:#333}
+  #content p{margin:0 0 12px}
+  #content audio{width:100%; margin:10px 0 16px}
+  #content .ph{color:var(--muted)}
+  .legend{display:flex; gap:16px; font-size:12px; color:var(--muted); margin:10px 2px 0}
+  .legend i{display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:4px}
+  .legend .b{background:#fff; border:1px solid var(--line)}
+  .legend .g{background:#fafbfc; border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>每日阅读</h1>
+    <p class="sub">英语学习文章与朗读音频 · 按日期回看</p>
+  </header>
+
+  <div class="card">
+    <div id="cal"></div>
+    <div class="legend">
+      <span><i class="b"></i>有记录（可点）</span>
+      <span><i class="g"></i>无记录（灰）</span>
+    </div>
+  </div>
+
+  <div id="subtitle"></div>
+  <div id="content"></div>
+</div>
+
+<script>
+const avail = new Set();
+let articles = [];
+let curY, curM, selectedDate = null;
+const cal = document.getElementById('cal');
+const pad = n => (n < 10 ? '0' + n : '' + n);
+const fmt = dt => dt.getFullYear() + '-' + pad(dt.getMonth()+1) + '-' + pad(dt.getDate());
+
+function monthMatrix(y, m){
+  const startOffset = (new Date(y, m, 1).getDay() + 6) % 7; // 周一为首
+  const days = new Date(y, m+1, 0).getDate();
+  const cells = [];
+  for(let i=0;i<startOffset;i++) cells.push(null);
+  for(let d=1; d<=days; d++) cells.push(d);
+  while(cells.length % 7 !== 0) cells.push(null);
+  return cells;
+}
+
+function renderCal(){
+  const cells = monthMatrix(curY, curM);
+  const wk = ['一','二','三','四','五','六','日'];
+  let html = '<div class="cal-head"><button id="prev">‹</button>'
+    + '<span>' + curY + '年' + (curM+1) + '月</span>'
+    + '<button id="next">›</button></div>';
+  html += '<div class="weekrow">' + wk.map(w=>'<span>'+w+'</span>').join('') + '</div>';
+  html += '<div class="grid">';
+  const todayStr = fmt(new Date());
+  cells.forEach(d=>{
+    if(d === null){ html += '<div class="day other"></div>'; return; }
+    const ds = curY + '-' + pad(curM+1) + '-' + pad(d);
+    const cls = ['day'];
+    if(!avail.has(ds)) cls.push('none'); else cls.push('has');
+    if(ds === todayStr) cls.push('today');
+    if(ds === selectedDate) cls.push('sel');
+    const attr = avail.has(ds) ? ' data-date="'+ds+'"' : '';
+    html += '<div class="'+cls.join(' ')+'"'+attr+'>'+d+'</div>';
+  });
+  html += '</div>';
+  cal.innerHTML = html;
+  document.getElementById('prev').onclick = ()=>shiftMonth(-1);
+  document.getElementById('next').onclick = ()=>shiftMonth(1);
+}
+
+function shiftMonth(delta){
+  curM += delta;
+  if(curM < 0){ curM = 11; curY--; }
+  if(curM > 11){ curM = 0; curY++; }
+  renderCal();
+}
+
+async function loadArticle(date){
+  selectedDate = date;
+  renderCal();
+  const a = articles.find(x => x.date === date);
+  const meta = a ? ('　·　新学 ' + a.new + ' / 复习 ' + a.review) : '';
+  document.getElementById('subtitle').textContent = date + meta;
+  try{
+    const res = await fetch('articles/' + date + '.html');
+    if(!res.ok) throw new Error('not found');
+    document.getElementById('content').innerHTML = await res.text();
+    location.hash = date;
+  }catch(err){
+    document.getElementById('content').innerHTML = '<p class="ph">加载失败：' + date + '</p>';
+  }
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function showPlaceholder(){
+  document.getElementById('subtitle').textContent = '';
+  document.getElementById('content').innerHTML =
+    '<p class="ph">今日文章尚未生成。点上方黑色日期查看历史记录。</p>';
+}
+
+cal.addEventListener('click', e=>{
+  const t = e.target.closest('.day.has');
+  if(t && t.dataset.date) loadArticle(t.dataset.date);
+});
+
+async function init(){
+  try{
+    const res = await fetch('dates.json');
+    const data = await res.json();
+    articles = data.articles || [];
+    articles.forEach(a => avail.add(a.date));
+  }catch(err){
+    document.getElementById('content').innerHTML = '<p class="ph">清单加载失败（dates.json）。</p>';
+    return;
+  }
+  const now = new Date();
+  curY = now.getFullYear(); curM = now.getMonth();
+  let target = null;
+  const hash = location.hash.replace('#','');
+  if(hash && avail.has(hash)) target = hash;
+  else if(avail.has(fmt(now))) target = fmt(now);
+  else if(articles.length) target = articles[0].date; // 最新（降序首条）
+  renderCal();
+  if(target) loadArticle(target); else showPlaceholder();
+}
+init();
+</script>
+</body>
+</html>
