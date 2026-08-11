@@ -1,0 +1,470 @@
+[
+  {
+    "year": 2016,
+    "month": 6,
+    "set": 1,
+    "title": "乌镇",
+    "topic_tags": ["culture", "geography", "history"],
+    "source_cn": "乌镇是浙江的一座古老水镇，坐落在京杭大运河畔。这是一处迷人的地方，有许多古桥、中式旅店和餐馆。在过去一千年里，乌镇的水系和生活方式并未经历多少变化，是一座展现古文明的博物馆。乌镇所有房屋都用石木建造。数百年来，当地人沿着河边建起了住宅和集市。无数宽敞美丽的庭院藏身于屋舍之间，游客们每到一处都会有惊喜的发现。",
+    "ref_en": "Wuzhen is an ancient water town in Zhejiang Province, located on the bank of the Beijing-Hangzhou Grand Canal. This is a fascinating place with many bridges, Chinese hotels and restaurants. Over the past millennium, the water system and way of life in Wuzhen have not changed much, thus making it a museum showing ancient civilization. All the houses in Wuzhen are built of stone and wood. For centuries, the local people have built houses and markets along the river. Countless beautiful spacious courtyards hide between the houses, and visitors will make a surprising discovery wherever they go."
+  },
+  {
+    "year": 2016,
+    "month": 6,
+    "set": 2,
+    "title": "功夫",
+    "topic_tags": ["culture", "sports", "tradition"],
+    "source_cn": "功夫（Kung Fu）是中国武术（martial arts）的俗称。中国武术的起源可以追溯到自卫的需要、狩猎活动以及古代中国的军事训练。它是中国传统体育运动的一种，年轻人和老年人都练。它已逐渐演变成了中国文化的独特元素。作为中国的国宝，功夫有上百种不同的风格，是世界上练得最多的武术形式。有些风格模仿了动物的动作，还有一些则受到了中国哲学思想、神话和传说的启发。",
+    "ref_en": "Kung Fu is the common name for Chinese martial arts. The origin of Chinese martial arts can be traced to the need for self-defense, hunting activities and military training in ancient China. It is one of the Chinese traditional sports, practiced by the young and old. It has gradually evolved into the unique element of Chinese culture. As China's national treasure, Kung Fu, with hundreds of different styles, is the most practiced martial arts form in the world. Some styles imitate animal movements, while others are inspired by Chinese philosophy, myths and legends."
+  },
+  {
+    "year": 2016,
+    "month": 6,
+    "set": 3,
+    "title": "风筝",
+    "topic_tags": ["culture", "history", "tradition"],
+    "source_cn": "在山东省潍坊市，风筝不仅仅是玩具，而且还是这座城市文化的标志。潍坊以“风筝之都”而闻名，已有将近2,400年放飞风筝的历史。传说中国古代哲学家墨子用了三年时间在潍坊制作了世界上首个风筝，但放飞的第一天风筝就坠落并摔坏了。也有人相信风筝是中国古代木匠鲁班发明的。据说他的风筝用木头和竹子制作，飞了三天后才落地。",
+    "ref_en": "In Weifang City, Shandong Province, the kite is not only a toy, but also a cultural symbol of the city. Weifang, known as the \"Kite Capital\", has a history of nearly 2,400 years of kite flying. Legend has it that Mo Zi, an ancient Chinese philosopher, spent three years making the world's first kite in Weifang, but the kite fell and broke on the first day of flying. Some people believe that the kite was invented by Luban, an ancient Chinese carpenter. It is said that his kite, made of wood and bamboo, flew for three days before landing."
+  },
+  {
+    "year": 2016,
+    "month": 12,
+    "set": 1,
+    "title": "红色",
+    "topic_tags": ["culture", "tradition", "society"],
+    "source_cn": "在中国文化中，红色通常象征着好运、长寿和幸福，在春节和其他喜庆场合，红色到处可见。人们把现金作为礼物送给家人或亲密朋友时，通常放在红信封里。红色在中国流行的另一个原因是人们把它与中国革命和共产党相联系。然而，红色并不总是代表好运与快乐。因为从前死者的名字常用红色书写，用红墨水写中国人名被看成是一种冒犯行为。",
+    "ref_en": "The color of red usually symbolizes good luck, longevity and happiness in Chinese culture. Red can be found everywhere during the Chinese Spring Festival and other joyous occasions. Cash is often put in red envelopes when it is given as a gift to family members or close friends. Its popularity can also be attributed to the fact that people associate it with the Chinese revolution and the Communist Party. However, red does not always stand for good luck and happiness, because the name of the dead used to be written in red, and using red ink to write Chinese names is seen as an offense."
+  },
+  {
+    "year": 2016,
+    "month": 12,
+    "set": 2,
+    "title": "白色",
+    "topic_tags": ["culture", "tradition", "society"],
+    "source_cn": "随着中国的改革开放，如今很多年轻人都喜欢举行西式婚礼。新娘在婚礼上穿着白色婚纱，因为白色被认为是纯洁的象征。然而，在中国传统文化中，白色经常是葬礼上使用的颜色。因此务必记住，白花一定不要用作祝人康复的礼物，尤其不要送给老年人或危重病人。同样，礼金也不能装在白色信封里，而要装在红色信封里。",
+    "ref_en": "With China's reform and opening up, many young people tend to hold Western-style weddings these days. The bride wears a white wedding dress at the wedding, because white is considered as a symbol of purity. However, in traditional Chinese culture, white is often used in funerals, so be sure to remember that white flowers must not be used as a gift to wish someone a good recovery, especially not to the seniors or patients in critical conditions. Similarly, the cash gift cannot be packed in a white envelope, but in a red envelope."
+  },
+  {
+    "year": 2016,
+    "month": 12,
+    "set": 3,
+    "title": "黄色",
+    "topic_tags": ["culture", "history", "tradition"],
+    "source_cn": "在中国文化中，黄颜色是一种很重要的颜色，因为它具有独特的象征意义。在封建（feudal）社会中，它象征统治者的权力和权威。那时，黄色是专为皇帝使用的颜色，皇家宫殿全都漆成黄色，皇袍总是黄色的，而普通老百姓是禁止穿黄色衣服的。在中国，黄色也是收获的象征。秋天庄稼成熟时，田野变得一片金黄。人们兴高采烈，庆祝丰收。",
+    "ref_en": "Yellow is an important color in Chinese culture because of its unique symbolic meaning. In feudal society, it represents the ruler's power and authority. At that time, yellow was exclusively used for the emperor—the royal palace was painted yellow and the imperial robe was always yellow. However, ordinary people were forbidden to wear clothes of the color yellow. In China, yellow also signifies harvest. The fields grow golden yellow in autumn when the crops mature. People celebrate the harvest cheerfully."
+  },
+  {
+    "year": 2017,
+    "month": 6,
+    "set": 1,
+    "title": "黄河",
+    "topic_tags": ["geography", "history"],
+    "source_cn": "黄河是亚洲第三、世界第六长的河流。“黄”这个字描述的是其河水浑浊的颜色。黄河发源于青海，流经九个省份，最后注入渤海。黄河是中国赖以生存的几条河流之一。黄河流域（river basin）是中国古代文明的诞生地，也是中国早期历史上最繁荣的地区。然而，由于极具破坏力的洪水频发，黄河曾造成多次灾害。在过去几十年里，政府采取了各种措施防止灾害发生。",
+    "ref_en": "The Yellow River ranks the third longest in Asia and the sixth longest in the world. The word \"yellow\" describes the muddy water of the river. The Yellow River, one of several rivers for China to live on, originates from Qinghai, flows through nine provinces, and finally pours into the Bohai Sea. The river basin is not only the birthplace of ancient Chinese civilization, but also the most prosperous region in the early history of China. However, due to the frequent devastating floods, it has caused many disasters. In the past few decades, the government has taken various measures to prevent disasters."
+  },
+  {
+    "year": 2017,
+    "month": 6,
+    "set": 2,
+    "title": "珠江",
+    "topic_tags": ["geography", "economy"],
+    "source_cn": "珠江是华南一大河系，流经广州市，是中国第三长的河流，仅次于长江和黄河。珠江三角洲（delta）是中国最发达的地区之一，面积约11,000平方公里。它在面积和人口方面也是世界上最大的城市聚集区。珠江三角洲九个最大城市共有5,700多万人口。上世纪70年代末中国改革开放以来，珠江三角洲已成为中国和世界主要经济区域和制造中心之一。",
+    "ref_en": "The Pearl River, an extensive river system in southern China, flows through Guangzhou City. It is China's third-longest river, only after the Yangtze River and the Yellow River. The Pearl River Delta (PRD) is one of the most developed regions in China with an area of about 11,000 square kilometers. It is the largest urban area in the world in both size and population. The nine largest cities of PRD have a combined population of over 57 million. Since the reform and opening up was adopted by the Chinese government in the late 1970s, the Delta has become one of the leading economic regions and a major manufacturing center of China and the world."
+  },
+  {
+    "year": 2017,
+    "month": 6,
+    "set": 3,
+    "title": "长江",
+    "topic_tags": ["geography", "economy", "history"],
+    "source_cn": "长江是亚洲最长、世界上第三长的河流。长江流经多种不同的生态系统，是诸多濒危物种的栖息地，灌溉了中国五分之一的土地。长江流域（river basin）居住着中国三分之一的人口。长江在中国历史、文化和经济上起着很大的作用。长江三角洲（delta）产出多达20%的中国国民生产总值。几千年来，长江一直被用于供水、运输和工业生产。长江上还坐落着世界最大的水电站。",
+    "ref_en": "The Yangtze River is the longest river in Asia and the third-longest in the world. It flows through a wide array of ecosystems and is habitat to several endemic and endangered species. The Yangtze River drains one-fifth of the land area of the People's Republic of China (PRC). Its river basin is home to one-third of the country's population. The Yangtze plays a large role in the history, culture and economy of China. The Yangtze River Delta generates as much as 20% of the PRC's GDP. For thousands of years, the river has been used for water, irrigation and industrial production. The largest hydro-electric power station in the world is located on the river."
+  },
+  {
+    "year": 2017,
+    "month": 12,
+    "set": 1,
+    "title": "华山",
+    "topic_tags": ["geography", "history", "tradition"],
+    "source_cn": "华山位于华阴市，距西安120公里。华山是秦岭的一部分，秦岭不仅分隔陕南与陕北，也分隔华南与华北。与从前人们常去朝拜的泰山不同，华山过去很少有人光临，因为上山的道路极其危险。然而，希望长寿的人却经常上山，因为山上生长着许多药草，特别是一些稀有的药草。自上世纪90年代安装缆车以来，参观人数大大增加。",
+    "ref_en": "Mount Hua is located in Huayin City, 120 kilometers away from Xi'an. It is part of the Qinling or Qin Mountains, which divide not only northern and southern Shaanxi, but also south and north China. Unlike Mount Tai that used to be frequented by pilgrims, Mount Hua was not well visited by pilgrims from the rest of China as the roads up the mountain were extremely dangerous. Back then, however, those who wished to enjoy longevity ventured in Mount Hua quite a lot because it was believed that numerous herbs, rare ones in particular, grew in the mountain. Since cable cars were installed in Mount Hua in the 1990s, the number of visitors has increased dramatically."
+  },
+  {
+    "year": 2017,
+    "month": 12,
+    "set": 2,
+    "title": "泰山",
+    "topic_tags": ["geography", "history", "tradition"],
+    "source_cn": "泰山位于山东省西部。海拔1500余米，方圆约400平方公里。泰山不仅雄伟壮观，而且是一座历史文化名山，过去3000多年一直是人们前往朝拜的地方。据记载，共有72位帝王曾来此游览。许多作家到泰山获取灵感，写诗作文，艺术家也来此绘画。山上因此留下了许许多多的文物古迹。泰山如今已成为中国一处主要的旅游景点。",
+    "ref_en": "Located in western Shandong province in eastern China, Mount Tai stands over 1500 meters above sea level and covers an area of about 400 square kilometers. It is a mountain of historical and cultural significance. Religious worship of Mount Tai dates back 3,000 years. In recorded history, 72 emperors came here to pay homage to heaven and earth. Mount Tai has seen many poets, literary scholars as well as painters who have traveled there for inspiration. That explains why Mount Tai features numerous cultural relics and historic sites. Mount Tai has become one of the leading tourist attractions in China."
+  },
+  {
+    "year": 2017,
+    "month": 12,
+    "set": 3,
+    "title": "黄山",
+    "topic_tags": ["geography", "tradition", "culture"],
+    "source_cn": "黄山位于安徽省南部。它风景独特，尤以其日出和云海著称。要欣赏大山的宏伟壮丽，通常得向上看。但要欣赏黄山美景，就得向下看。黄山的湿润气候有利于茶树生长，是中国主要产茶地之一。这里还有许多温泉，其泉水有助于防治皮肤病。黄山是中国主要旅游目的地之一，也是摄影和传统国画最受欢迎的主题。",
+    "ref_en": "Located in southern Anhui province in eastern China, Huangshan, or literally Yellow Mountain, is known for its unique natural scenery, particularly sunrises and sea of clouds. To appreciate the magnificence of the mountain, you have to look upward in most cases, while to enjoy the fascinating landscape of Huangshan, you've got to look downward. The humid climate of the area offers favorable conditions for tea trees to grow, which makes the surrounding area of Huangshan one of the major producers of teas. The mountain is also home to numerous hot springs, which are helpful for preventing skin disease. As one of the top tourist destinations in China, Huangshan represents one of the most popular themes of photographic works and traditional Chinese paintings."
+  },
+  {
+    "year": 2018,
+    "month": 6,
+    "set": 1,
+    "title": "公交车",
+    "topic_tags": ["society", "economy"],
+    "source_cn": "公交车曾是中国人出行的主要交通工具。近年来，由于私家车数量不断增多，城市的交通问题越来越严重。许多城市为了鼓励更多人乘坐公交车出行，一直在努力改善公交车的服务质量。车辆的设施不断更新，车速也有了显著提高。然而，公交车的票价却依然相当低廉。现在，在大多数城市，许多当地老年市民都可以免费乘坐公交车。",
+    "ref_en": "Buses used to be the major means of transportation for the Chinese people. In recent years, due to the increasing number of private cars, the traffic problems in cities have become more and more serious. In order to encourage more people to travel by bus, many cities have been making great efforts to improve the quality of bus service. The facilities of the vehicles have been constantly updated, and the speed has also increased significantly. However, the ticket prices of buses are still quite low. Nowadays, in most cities, many local elderly citizens can take buses for free."
+  },
+  {
+    "year": 2018,
+    "month": 6,
+    "set": 2,
+    "title": "飞机",
+    "topic_tags": ["society", "economy"],
+    "source_cn": "过去，乘飞机出行对大多数中国人来说是难以想象的。如今，随着经济的发展和生活水平的提高，越来越多的中国人包括许多农民和外出务工人员都能乘飞机出行。他们可以乘飞机到达所有大城市，还有许多城市也在筹建机场。航空服务不断改进，而且经常会有特价机票。近年来，节假日期间选择乘飞机外出旅游的人不断增加。",
+    "ref_en": "In the past, traveling by plane was unimaginable for most Chinese people. Today, with the development of the economy and the improvement of living standards, more and more Chinese people, including many farmers and migrant workers, can travel by air. They can fly to all major cities, and many other cities are also planning to build airports. Air services continue to improve, and there are often cheap flights. In recent years, the number of people choosing to travel by air during holidays has been increasing."
+  },
+  {
+    "year": 2018,
+    "month": 6,
+    "set": 3,
+    "title": "地铁",
+    "topic_tags": ["society", "technology", "economy"],
+    "source_cn": "近年来，中国有越来越多的城市开始建造地铁。发展地铁有助于减少城市的交通拥堵和空气污染。地铁具有安全、快捷和舒适的优点，越来越多的人选择地铁作为每天上班或上学的主要交通工具。如今，在中国乘坐地铁正变得越来越方便。在有些城市里，乘客只需用卡或手机就可以乘坐地铁。许多当地老年市民还可以免费乘坐地铁。",
+    "ref_en": "In recent years, an increasing number of cities in China have begun to build subways. The development of subways helps reduce traffic jams and air pollution in cities. Subways have the advantages of safety, quickness and comfort, and a growing number of people choose subways as their main means of transportation to work or school every day. Nowadays, taking the subway is becoming more and more convenient in China. In some cities, passengers can simply use their cards or mobile phones to take the subway. Many local senior citizens can also take the subway for free."
+  },
+  {
+    "year": 2018,
+    "month": 12,
+    "set": 1,
+    "title": "手机阅读",
+    "topic_tags": ["technology", "society"],
+    "source_cn": "由于通信网络的快速发展，中国智能手机用户数量近年来以惊人速度增长。这极大地改变了许多人的阅读方式。他们现在经常在智能手机上看新闻和文章，而不买传统报刊。大量移动应用程序（apps）的开发使人们能用手机读小说和其他形式的文学作品。因此，纸质书籍的销售受到了影响。但调查显示，尽管智能手机阅读市场稳步增长，超半数成年人仍喜欢读纸质书。",
+    "ref_en": "Due to the fast development of communication networks, the number of smartphone users in China has grown at an amazing rate in recent years. This has changed many people's ways of reading dramatically. Today, they often read news and articles on their smartphones instead of buying traditional newspapers and periodicals. The development of many mobile apps enables people to read novels and other forms of literary works on their smartphones. Therefore, the sale of paper books has been affected. However, a survey shows that, despite the steady growth of the smartphone reading market, more than half of adults still like to read paper books."
+  },
+  {
+    "year": 2018,
+    "month": 12,
+    "set": 2,
+    "title": "移动支付",
+    "topic_tags": ["technology", "economy", "society"],
+    "source_cn": "过去几年里，移动支付市场在中国蓬勃发展。随着移动互联网的出现，手机购物逐渐成为一种趋势。18到30岁的年轻人构成了移动支付市场的最大群体。由于现在用手机付款很容易，许多消费者在购物时宁愿用手机付款，而不愿用现金或信用卡。为了鼓励人们多消费，许多商店给使用移动支付的顾客打折。专家预测，中国移动支付市场未来仍有很大发展潜力。",
+    "ref_en": "In the past few years, the mobile payment market has been thriving in China. With the advent of the mobile Internet, shopping through the phone has gradually become a trend. Young people aged between 18 and 30 constitute the largest group in the mobile payment market. Since it is extremely easy to pay by mobile phone now, many consumers prefer to pay by mobile phone when shopping, rather than in cash or by credit card. To encourage people to spend more, many stores offer discounts to customers who use mobile payment. Experts predict that China's mobile payment market still has great potential for development in the future."
+  },
+  {
+    "year": 2018,
+    "month": 12,
+    "set": 3,
+    "title": "过度依赖手机",
+    "topic_tags": ["technology", "society", "family"],
+    "source_cn": "越来越多的中国人现在的确离不开手机了。他们中的许多人，包括老年人，都使用手机应用程序保持联系并拓宽朋友圈。他们也用手机购物，查找信息，因为手机便于携带。此外，使用手机应用程序通信比传统电话便宜。然而，这种新趋势导致人们在社交时过度依赖手机。事实上，一些年轻人已经变得十分上瘾，以至于怠慢了与家人和朋友面对面的交流。",
+    "ref_en": "More and more Chinese people can hardly leave their phones now. Many of them, including the elderly, use mobile phone apps to keep in touch and to broaden their circle of friends. They also use their phones for shopping and searching for information, because phones are easy to carry. Besides, communication by mobile apps is cheaper than that by traditional phones. However, this new trend makes people rely too much on their phones when socializing. In fact, some young people have become so addicted that they neglect face-to-face communication with their family members and friends."
+  },
+  {
+    "year": 2019,
+    "month": 6,
+    "set": 1,
+    "title": "剪纸",
+    "topic_tags": ["culture", "tradition", "history"],
+    "source_cn": "剪纸是中国民间艺术的一种独特形式，已有2000年的历史。剪纸很可能源于汉代，继纸张发明之后。从此，它在中国的许多地方得到了普及。剪纸用的材料和工具很简单：纸和剪刀。剪纸作品通常是用红纸做成的，因为红色在中国传统文化中与幸福相连。因此，在婚礼、春节等喜庆场合，红颜色的剪纸是门窗装饰的首选。",
+    "ref_en": "Paper cutting, with a history of over 2,000 years, is a unique form of Chinese folk art. It is possible that such an art originated from the Han Dynasty, right after the invention of paper. It has since gained great popularity all over China. The materials and tools used in paper cutting are quite simple: paper and scissors. Works of paper cutting are usually made of red paper, because red is associated with happiness in traditional Chinese culture. That is why, on joyful occasions such as weddings and the Spring Festival, red paper cuttings are the top choice for the decoration of doors and windows."
+  },
+  {
+    "year": 2019,
+    "month": 6,
+    "set": 2,
+    "title": "灯笼",
+    "topic_tags": ["culture", "tradition", "history"],
+    "source_cn": "灯笼起源于东汉，最初主要用于照明。在唐代，人们用红灯笼来庆祝安定的生活。从那时起，灯笼在中国的许多地方流行起来。灯笼通常用色彩鲜艳的薄纸制作，形状和尺寸各异。在中国传统文化中，红灯笼象征生活美满和生意兴隆，通常在春节、元宵节和国庆节等节日期间悬挂。如今，世界上许多其他地方也能看到红灯笼。",
+    "ref_en": "Lanterns, originating from the Eastern Han Dynasty, were first mainly used for lighting. In the Tang Dynasty, people used red lanterns to celebrate a peaceful life. Since then, lanterns have gained popularity in many parts of China. Lanterns are usually made of thin paper of bright colors, in different shapes and sizes. In traditional Chinese culture, red lanterns symbolize a happy life and a prosperous business, and are usually hung during festivals such as the Spring Festival, the Lantern Festival and the National Day. Nowadays, red lanterns can also be seen in many other places around the world."
+  },
+  {
+    "year": 2019,
+    "month": 6,
+    "set": 3,
+    "title": "舞狮",
+    "topic_tags": ["culture", "tradition", "sports"],
+    "source_cn": "舞狮作为中国传统民间表演已有2000多年历史。在狮子舞中，两位表演者同披一件狮子服，一个舞动头部，另一个舞动身体和尾巴。他们熟练配合，模仿狮子的各种动作。狮子是兽中之王，象征幸福和好运，所以人们通常在春节和其他节日期间表演狮子舞。狮子舞也可能出现在其他重要场合，如商店开业和结婚典礼，往往吸引许多人观赏。",
+    "ref_en": "The lion dance, as a form of Chinese traditional folk performance, has a history of over 2,000 years. In the lion dance, two performers wear one lion costume, one waving its head and the other moving its body and tail. They cooperate with each other perfectly, imitating different motions of lions. The lion, the king of all the animals, is a symbol of happiness and good luck, so people usually perform the lion dance during the Spring Festival and other festivals. The lion dance may also appear on other important occasions such as the opening ceremony of stores and the wedding ceremony, which tends to attract many people to watch."
+  },
+  {
+    "year": 2019,
+    "month": 12,
+    "set": 1,
+    "title": "家庭观念",
+    "topic_tags": ["family", "society", "tradition"],
+    "source_cn": "中国的家庭观念与其文化传统有关。和睦的大家庭曾非常令人羡慕。过去四代同堂并不少见。由于这个传统，许多年轻人婚后继续与父母同住。今天，这个传统正在改变。随着住房条件的改善，越来越多年轻夫妇选择与父母分开住。但他们之间的联系仍然很密切。许多老年人仍然帮着照看孙辈。年轻夫妇也抽时间探望父母，特别是在春节和中秋节等重要节日。",
+    "ref_en": "Family values in China are related to its cultural traditions. A big harmonious family used to be quite enviable to many. In the past, it was not uncommon to see a family of four generations living under one roof. And because of that, many young people continued to stay with their parents after marriage. Today, this tradition is changing. As housing conditions improve, more and more young couples choose to live separately from their parents, but the connection between them remains close. Many seniors still help look after their grandchildren, and young couples also take time to visit their parents, especially during important festivals such as the Spring Festival and Mid-Autumn Festival."
+  },
+  {
+    "year": 2019,
+    "month": 12,
+    "set": 2,
+    "title": "家庭教育观",
+    "topic_tags": ["family", "society"],
+    "source_cn": "中国家庭十分重视孩子的教育。许多父母认为应该努力工作，确保孩子受到良好的教育。他们不仅非常情愿为孩子的教育投资，而且花很多时间督促他们学习。多数家长希望孩子能上名牌大学。由于改革开放，越来越多的家长能送孩子到国外学习或参加国际交流项目，让其拓宽视野。通过这些努力，他们期望孩子健康成长，为国家的发展和繁荣做出贡献。",
+    "ref_en": "Chinese families attach great importance to the education of their children. Many parents think that they should work hard to ensure that their children get a good education. They are not only willing to invest in their children's education, but also spend plenty of time urging them to learn. Most parents hope their children can attend famous universities. Due to the reform and opening up, more and more parents are able to send their children to study abroad or to participate in international exchange programs so that they can broaden their horizons. Through these efforts, they expect their children to grow up healthy and to make contributions to the development and prosperity of the country."
+  },
+  {
+    "year": 2019,
+    "month": 12,
+    "set": 3,
+    "title": "汉族名字",
+    "topic_tags": ["culture", "family", "tradition"],
+    "source_cn": "中国汉族人的全名由姓和名组成。中文姓名的特点是，姓总是在前，名跟在其后，千百年来，父姓一直世代相传。然而，如今，孩子跟母姓并不罕见。一般来说，名有一个或两个汉字，通常承载父母对孩子的愿望。从孩子的名字可以推断出父母希望孩子成为什么样的人，或者预期他们过什么样的生活。父母非常重视给孩子取名，因为名字往往会伴随孩子一生。",
+    "ref_en": "The full name of a Han Chinese consists of a family name and a given name. A feature of Chinese names is that the family name always comes first, followed by the given name. For thousands of years, the father's family name has been passed down through generations. However, today it is not uncommon for a child to have his or her mother's family name. Generally speaking, a given name contains one or two Chinese characters, which usually carry the parents' wishes for the child. From a given name, we can infer what kind of person the parents expect the child to be, or what kind of life they expect the child to have. Chinese parents attach great importance to naming their child, because a name often accompanies the child throughout his or her life."
+  },
+  {
+    "year": 2020,
+    "month": 7,
+    "set": 1,
+    "title": "火锅",
+    "topic_tags": ["food", "culture", "tradition"],
+    "source_cn": "在中国火锅已有2000多年的历史，最早流行于最寒冷的地区，然后在很多地区盛行，出现了具有地方特色的种类。吃火锅时，家人和朋友围坐在桌边，桌子中间放着热腾腾的火锅。吃火锅时，人们可以根据自己的口味放肉、海鲜、蔬菜和其他配料，自己烹饪。人们可以一边尽情地聊天，一边享受美餐。",
+    "ref_en": "In China, hotpot has a history of more than 2,000 years. It was first popular in the coldest areas, and then prevailed in many other regions, giving rise to varieties with local features. When eating hotpot, family members and friends sit around a table with a steaming hotpot placed in its center. People can put meat, seafood, vegetables and other ingredients into the pot according to their own tastes, and cook by themselves. They can chat as much as they like while enjoying a delicious meal."
+  },
+  {
+    "year": 2020,
+    "month": 9,
+    "set": 1,
+    "title": "茅台",
+    "topic_tags": ["food", "history", "culture"],
+    "source_cn": "茅台（Moutai）是中国最有名的白酒，在新中国成立前夕，被选为国宴用酒。据说赤水沿岸的村民四千年前就开始酿造茅台。在西汉时期，那里的人们生产出了高质量的茅台，并把它贡给皇帝。自唐朝开始，这种地方酒通过海上丝绸之路运往海外。茅台味道柔和，有一种特殊的香味；适量饮用可以帮助缓解疲劳，有镇静作用，因而广受国内外消费者的喜爱。",
+    "ref_en": "Moutai is the most famous liquor in China, and was chosen as the liquor for state banquets on the eve of the founding of new China. It is said that villagers along the Chishui River began to make Moutai 4,000 years ago. In the Western Han Dynasty, the people there produced high-quality Moutai and presented it to the emperor as a tribute. Since the Tang Dynasty, this local liquor has been shipped overseas via the Maritime Silk Road. Moutai has a soft taste and a special fragrance. Moderate drinking can help relieve fatigue and has a calming effect, so it is widely loved by consumers at home and abroad."
+  },
+  {
+    "year": 2020,
+    "month": 9,
+    "set": 2,
+    "title": "茶文化",
+    "topic_tags": ["food", "culture", "history"],
+    "source_cn": "茶拥有5000年的历史。传说，神农氏（Shen Nong）喝开水时，几片野树叶子落进壶里，开水顿时散发出宜人的香味。他喝了几口，觉得很提神。茶就这样发现了。自此，茶在中国开始流行。茶园遍布全国，茶商变得富有。昂贵、雅致的茶具成了地位的象征。今天，茶不仅是一种健康的饮品，而且是中国文化的一个组成部分。越来越多的国际游客一边品茶，一边了解中国文化。",
+    "ref_en": "Tea has a history of 5,000 years. Legend has it that when Shen Nong drank boiled water, several wild leaves fell into the pot and the boiled water immediately gave off a pleasant fragrance. After a few sips, he felt refreshed. This is how tea was discovered. Since then, tea has become popular in China. Tea plantations spread all over the country and thus tea merchants became rich. Expensive and elegant tea sets became a symbol of status. Today, tea is not only a healthy drink, but also an integral part of Chinese culture. More and more international tourists learn about Chinese culture while sipping tea."
+  },
+  {
+    "year": 2020,
+    "month": 9,
+    "set": 3,
+    "title": "北京烤鸭",
+    "topic_tags": ["food", "culture", "history"],
+    "source_cn": "你如果到北京旅游，必须做两件事：一件是登长城，另一件是吃北京烤鸭。闻名遐迩的北京烤鸭曾仅限于宫廷，而现在北京数百家餐厅均有供应。北京烤鸭源于600年前的明代。来自全国各地的厨师被挑选出来到京城为皇帝做饭。人们认为在皇宫做饭是一种莫大的荣誉，只有厨艺出众者才能获得这份工作。事实上，正是这些宫廷厨师使北京烤鸭的烹饪艺术日臻完善。",
+    "ref_en": "If you travel to Beijing, there are two things you must do: one is to climb the Great Wall, and the other is to eat Beijing Roast Duck. The famous Beijing Roast Duck was once served only in the imperial palace, but is now supplied in hundreds of restaurants in the city. Beijing Roast Duck originated in the Ming Dynasty 600 years ago, when chefs from all over the country were selected to cook for the emperor in the capital. It was believed that cooking in the palace was a great honor, and only those with excellent cooking skills could get the job. In fact, it was these royal chefs who gradually perfected the culinary art of Beijing Roast Duck."
+  },
+  {
+    "year": 2020,
+    "month": 12,
+    "set": 1,
+    "title": "鱼",
+    "topic_tags": ["food", "culture", "tradition"],
+    "source_cn": "鱼是春节前夕餐桌上不可或缺的一道菜，因为汉语中“鱼”字的发音与“余”字的发音相同。正由于这个象征性的意义，春节期间鱼也作为礼物送给亲戚朋友。鱼的象征意义据说源于中国传统文化。中国人有节省的传统，他们认为节省得愈多，就感到愈为安全。今天，尽管人们愈来愈富裕了，但他们仍然认为节省是一种值得弘扬的美德。",
+    "ref_en": "Fish is an indispensable dish on the table on the eve of the Spring Festival, because the pronunciation of the word \"fish\" is the same as that of \"surplus\" in Chinese. It is precisely because of this symbolic meaning that fish is also given to relatives and friends as gifts during the Spring Festival. The symbolic meaning of fish is said to originate from traditional Chinese culture. Chinese people have a tradition of thrift; they believe that the more they save, the safer they feel. Today, although people are getting richer, they still regard thrift as a virtue worth promoting."
+  },
+  {
+    "year": 2020,
+    "month": 12,
+    "set": 2,
+    "title": "团圆饭",
+    "topic_tags": ["food", "family", "tradition"],
+    "source_cn": "春节前夕吃团圆饭是中国人的传统。团圆饭是一年中最重要的晚餐，也是家庭团聚的最佳时机，家人生活在不同地方的家庭尤其如此。团圆饭上的菜肴丰富多样，其中有些菜肴有特殊含义。例如，鱼是不可缺少的一道菜，因为汉语中的“鱼”字和“余”字听上去一样。在中国的许多地方，饺子也是一道重要的佳肴，因为饺子象征着财富和好运。",
+    "ref_en": "Having a reunion dinner on the eve of the Spring Festival is a tradition of the Chinese people. The reunion dinner is the most important dinner of the year and the best occasion for family reunion, especially for families whose members live in different places. The dishes at the reunion dinner are rich and varied, and some of them have special meanings. For example, fish is an indispensable dish, because the word \"fish\" sounds the same as \"surplus\" in Chinese. In many parts of China, dumplings are also an important delicacy, because they symbolize wealth and good luck."
+  },
+  {
+    "year": 2020,
+    "month": 12,
+    "set": 3,
+    "title": "饮食差异",
+    "topic_tags": ["food", "geography", "culture"],
+    "source_cn": "生活在中国不同地区的人们饮食多种多样。北方人主要吃面食，南方人大多吃米饭。在沿海地区，海鲜和淡水水产品在人们饮食中占有相当大的比例，而在其他地区人们的饮食中，肉类和奶制品更为常见。四川、湖南等省份的居民普遍更爱吃辛辣的食物，而江苏和浙江人更喜欢甜食。然而，因为烹饪方式各异，同类食物的味道可能会有所不同。",
+    "ref_en": "People living in different regions of China have a wide variety of diets. Northerners mainly eat food made from flour, while southerners mostly eat rice. In coastal areas, seafood and freshwater products account for a large proportion of people's diet, while in other areas, meat and dairy products are more common. Residents of provinces such as Sichuan and Hunan generally prefer spicy food, while people from Jiangsu and Zhejiang prefer sweet food. However, because of different cooking methods, the taste of the same kind of food may vary."
+  },
+  {
+    "year": 2021,
+    "month": 6,
+    "set": 1,
+    "title": "铁观音",
+    "topic_tags": ["food", "geography", "culture"],
+    "source_cn": "铁观音（Tieguanyin）是中国最受欢迎的茶之一，原产自福建省安溪县西坪镇，如今安溪全县普遍种植，但该县不同地区生产的铁观音又各具风味。铁观音一年四季均可采摘，尤以春秋两季采摘的茶叶品质最佳。铁观音加工非常复杂，需要专门的技术和丰富的经验。铁观音含有多种维生素，喝起来口感独特。常饮铁观音有助于预防心脏病、降低血压、增强记忆力。",
+    "ref_en": "Tieguanyin, one of the most favored teas in China, is native to Xiping Town, Anxi County, Fujian Province. Nowadays, the tea is grown throughout Anxi County, with various flavors in different parts of the county. Tieguanyin can be collected through all seasons, tasting the best especially when gathered in spring and autumn. The complex processing of the tea calls for specialized skills and abundant experience. The drink, full of vitamins and with a distinct taste, serves to prevent heart disease, lower blood pressure and boost memory if regularly consumed."
+  },
+  {
+    "year": 2021,
+    "month": 6,
+    "set": 2,
+    "title": "龙井",
+    "topic_tags": ["food", "geography", "culture"],
+    "source_cn": "龙井（Longjing）是一种绿茶，主要产自中国东部沿海的浙江省。龙井茶独特的香味和口感为其赢得了“中国名茶”的称号，在中国深受大众的欢迎，在海外饮用的人也越来越多。龙井茶通常手工制作，其价格可能极其昂贵，也可能比较便宜，这取决于茶叶的生长地、采摘时间和制作工艺。龙井茶富含维生素C和其它多种有益健康的元素。经常喝龙井茶有助于减轻疲劳，延缓衰老。",
+    "ref_en": "Longjing is a kind of green tea, mainly produced in Zhejiang Province on the eastern coast of China. The unique fragrance and taste of Longjing tea have won it the title of \"China's Famous Tea\". It is very popular among the public in China, and more and more people drink it overseas. Longjing tea is usually made by hand, and its price can be extremely expensive or relatively cheap, depending on where the tea is grown, when it is picked and how it is made. Longjing tea is rich in vitamin C and various other health-beneficial elements. Drinking Longjing tea regularly helps relieve fatigue and delay aging."
+  },
+  {
+    "year": 2021,
+    "month": 6,
+    "set": 3,
+    "title": "普洱茶",
+    "topic_tags": ["food", "geography", "culture"],
+    "source_cn": "普洱（Pu'er）茶深受中国人喜爱，最好的普洱茶产自云南的西双版纳（Xishuangbanna），那里的气候和环境为普洱茶树的生长提供了最佳条件。普洱茶颜色较深，味道与其他的茶截然不同。普洱茶泡（brew）的时间越长越有味道。许多爱喝的人尤其喜欢其独特的香味和口感。普洱茶含有多种有益健康的元素，常饮普洱茶有助于保护心脏和血管，还有减肥、消除疲劳和促进消化的功效。",
+    "ref_en": "Pu'er is one of the most popular types of tea among the Chinese people, with its best produced in Xishuangbanna, Yunnan Province, where the climate and the environment provide the tea with the best growing conditions. Pu'er tea features a comparatively dark color and a totally different flavor. The longer it brews, the better it tastes. Many Pu'er lovers especially fancy its unique fragrance and flavor. As it contains many beneficial elements, the tea helps not only protect the heart and blood vessels but also lose weight, relieve fatigue and improve digestion if one drinks it regularly."
+  },
+  {
+    "year": 2021,
+    "month": 12,
+    "set": 1,
+    "title": "坎儿井",
+    "topic_tags": ["geography", "history", "society"],
+    "source_cn": "坎儿井（Karez）是新疆干旱地区的一种水利系统，由地下渠道将水井连接而成。该系统将春夏季节渗入（seep into）地下的大量雨水及积雪融水收集起来，通过山体的自然坡度引到地面，用于灌溉农田和满足人们的日常用水需求。坎儿井减少了水在地面的蒸发（evaporation），对地表破坏很小，因而有效地保护了自然资源与生态环境。坎儿井体现了我国人民与自然和谐共存的智慧，是对人类文明的一大贡献。",
+    "ref_en": "Karez is a water conservancy system in the arid region of Xinjiang, where wells are connected by underground channels. The system collects large amounts of rainwater and snowmelt that seep into the ground in spring and summer, and brings it to the surface through the natural slope of the mountain. The rainwater is used to irrigate farmland and meet people's daily water needs. Karez protects natural resources and the ecological environment by reducing evaporation of water from the surface, which does little damage to the surface. Karez embodies the wisdom of our people to live in harmony with nature, and it is a great contribution to human civilization."
+  },
+  {
+    "year": 2021,
+    "month": 12,
+    "set": 2,
+    "title": "都江堰",
+    "topic_tags": ["geography", "history", "economy"],
+    "source_cn": "都江堰（Dujiangyan）坐落在成都平原西部的岷江上，距成都市约50公里，始建于公元前三世纪。它的独特之处在于无需用堤坝调控水流。两千多年来，都江堰一直有效地发挥着防洪与灌溉作用，使成都平原成为旱涝保收的沃土和中国最重要的粮食产地之一。都江堰工程体现了我国人民与自然和谐共存的智慧，是全世界年代最久、仍在使用、无坝控水的水利工程。",
+    "ref_en": "Dujiangyan is located on the Minjiang River in the west of the Chengdu Plain, about 50 kilometers away from Chengdu City. It was built in the third century BC. It is unique in that there is no need to use dams to regulate the flow of water. For more than two thousand years, Dujiangyan has played an effective role in flood control and irrigation, making the Chengdu Plain a fertile soil for drought and flood protection and one of China's most important grain producing areas. The Dujiangyan Project embodies the wisdom of the harmonious coexistence of our people and nature. It is the world's oldest water conservancy project that is still in use to control water without the help of dams."
+  },
+  {
+    "year": 2021,
+    "month": 12,
+    "set": 3,
+    "title": "大运河",
+    "topic_tags": ["history", "geography", "economy"],
+    "source_cn": "大运河（Grand Canal）是世界上最长的人工河，北起北京，南至杭州。它是中国历史上最宏伟的工程之一。大运河始建于公元前4世纪，公元13世纪末建成。修建之初是为了运输粮食，后来也用于运输其他商品。大运河沿线区域逐渐发展成为中国的工商业中心。长久以来，大运河对中国经济发展发挥了重要作用，有力地促进了南北地区之间的人员往来和文化交流。",
+    "ref_en": "The Grand Canal is the longest man-made river in the world, running from Beijing in the north to Hangzhou in the south. It is one of the most magnificent projects in Chinese history. The Grand Canal was first built in the 4th century BC and completed at the end of the 13th century AD. It was originally built to transport grain, and was later also used to transport other commodities. The areas along the Grand Canal gradually developed into the industrial and commercial centers of China. For a long time, the Grand Canal has played an important role in China's economic development, effectively promoting the movement of people and cultural exchange between the northern and southern regions."
+  },
+  {
+    "year": 2022,
+    "month": 6,
+    "set": 1,
+    "title": "守株待兔",
+    "topic_tags": ["culture", "tradition", "history"],
+    "source_cn": "从前，有个农夫正在地里耕作，突然看见一只兔子飞奔而过，撞在一棵大树上死了。农夫毫不费力就吃到了兔肉，心里非常高兴。他想，“如果总是这样该多好啊！”于是，不再耕作，每天守候在那棵树旁，等待着能再捡到撞死在树上的兔子。他等呀等，等了一天又一天，田地也荒芜了，却再也没有等到第二只兔子。人们因而都嘲笑他把偶然当成必然。",
+    "ref_en": "Once upon a time, a farmer was plowing his field when he suddenly saw a rabbit darting past and crashing into a large tree and dying. The farmer had no trouble eating the rabbit and was overjoyed. He thought, \"How wonderful it would be if it were always like this!\" So he stopped plowing and waited by the tree every day, hoping to pick up another rabbit that would crash into the tree. He waited and waited, day after day. The field became deserted, but he never got a second rabbit. Therefore, people laughed at him for taking the chance for granted."
+  },
+  {
+    "year": 2022,
+    "month": 6,
+    "set": 2,
+    "title": "亡羊补牢",
+    "topic_tags": ["culture", "tradition", "history"],
+    "source_cn": "从前有个人养了一群羊，一天早上他准备出去放羊，发现少了一只。他仔细一看，看到羊栏（sheepfold）上有个窟窿。显然，夜间有狼钻进羊圈叼走了羊。邻居劝他修羊栏，可是他不听。第二天，他发现狼又通过窟窿叼走一只羊。他想起邻居的话，就赶快堵上窟窿，把羊栏补好。此后，他的羊再也没有被狼叼走。故事告诉我们：出了问题及时补救，可以防止蒙受更大损失。",
+    "ref_en": "There was once a man who kept a flock of sheep. One morning, he was going out to herd the sheep and found that one of them was missing. He looked closely and saw a hole in the sheepfold. Apparently, a wolf had got into the sheepfold at night and taken the sheep away. The neighbor advised him to fix the sheepfold, but he did not listen. The next day, he found that the wolf had taken another sheep away through the hole. Thinking of his neighbor's words, he quickly plugged the hole and repaired the sheepfold. From then on, his sheep were never taken away by wolves again. The story tells us that remedying problems in time can prevent further losses."
+  },
+  {
+    "year": 2022,
+    "month": 6,
+    "set": 3,
+    "title": "拔苗助长",
+    "topic_tags": ["culture", "tradition", "family"],
+    "source_cn": "从前有个农夫嫌他种的禾苗长得慢，就到地里把禾苗一株株地拔高了一点。回家后他对家人说：“今天可真把我累坏了！但我总算让禾苗一下子长高了。”他儿子到地里去一看，禾苗都已经死光了。现在有些家长急于让孩子成功，往往步那个农夫的后尘，搞得孩子苦不堪言，却不见孩子学业长进。这样的家长是否该对这个问题有所醒悟，让孩子自然成长呢？",
+    "ref_en": "Once upon a time, a farmer, who felt unhappy with the slow growth of the seedlings, went to the field and pulled them up a bit one by one. Returning home, he told his family, \"I am exhausted today! However, I finally made those seedlings grow taller all at once.\" His son hurried to the field only to find that the seedlings had died out. Nowadays, some parents are so eager for their children's success that they will repeat the tragedy of the farmer, making their kids suffer greatly while seeing no progress in them. Should such parents wake up to this reality and give their children space for natural growth?"
+  },
+  {
+    "year": 2022,
+    "month": 9,
+    "set": 1,
+    "title": "太极拳",
+    "topic_tags": ["culture", "sports", "tradition"],
+    "source_cn": "太极拳起源于中国古代，是中国武术的一个重要分支。太极拳原本是用来防身的，现在却是促进身体健康的有效方法。大量研究表明，这种运动有助于保持力量、柔韧性和平衡，减少压力和焦虑。太极拳练习起来轻松愉快。通过轻柔流畅的动作，可以让你冷静、清醒。如今，太极拳已遍布世界各地，深受广大健美人士的喜爱。",
+    "ref_en": "Originated in ancient China, Taijiquan is an important branch of Chinese martial arts. It was originally designed to defend oneself, but now it has become an effective way to promote physical and mental health. Numerous studies have shown that Taijiquan helps to maintain strength, flexibility and balance while reducing stress and anxiety. Practicing it is relaxing and enjoyable. Its gentle and smooth movements can bring you calm and clarity. Nowadays, Taijiquan has spread all over the world, and is very much loved by many fitness enthusiasts."
+  },
+  {
+    "year": 2022,
+    "month": 9,
+    "set": 2,
+    "title": "戏曲",
+    "topic_tags": ["culture", "tradition", "history"],
+    "source_cn": "戏曲是一种中国传统的艺术形式，可以追溯到唐朝。中国戏曲吸引观众的一大特色是其独具风格的脸谱（facial painting）。脸谱代表不同角色的性格和命运。观众通过观察脸谱能够更好地理解这些角色的故事。欣赏戏曲是中国人特别是老年人的一大乐趣。为了吸引更多的年轻观众，传统戏曲正在不断地发展和创新。如今，越来越多的外国观众也喜欢中国戏曲。",
+    "ref_en": "Chinese opera is a traditional Chinese art form, which can be traced back to the Tang Dynasty. One of the features of Chinese opera that attracts audiences is its unique facial painting. Different facial paintings symbolize different characters and their destinies. Audiences can better understand the characters' stories by observing those facial paintings. Appreciating Chinese opera is a great pleasure for Chinese people, especially the elderly. In order to attract more young audiences, traditional opera is constantly developing and innovating. Nowadays, more and more foreign audiences also like Chinese opera."
+  },
+  {
+    "year": 2022,
+    "month": 9,
+    "set": 3,
+    "title": "压岁钱",
+    "topic_tags": ["culture", "tradition", "family"],
+    "source_cn": "按照中国民间的传统习俗，春节期间长辈通常会给孩子发红包，俗称发压岁钱（lucky money），以表达对孩子的祝福，祝他们好运。如今，红包不仅是孩子的礼物，而且经常也是给长辈或亲朋好友的礼物。近年来，随着微信用户数量的增加，微信红包变得愈加流行。欢度春节时，人们经常互发微信红包表达问候，这无疑是一种与远方亲友联系的便捷方式。",
+    "ref_en": "According to traditional Chinese folk customs, during the Spring Festival the elders usually give children red envelopes, commonly known as lucky money, to express their blessings and wish them good luck. Nowadays, red envelopes are not only gifts for children, but are also often given to elders or relatives and friends. In recent years, with the increase in the number of WeChat users, WeChat red envelopes have become more and more popular. When celebrating the Spring Festival, people often send each other WeChat red envelopes to express greetings, which is undoubtedly a convenient way to keep in touch with relatives and friends far away."
+  },
+  {
+    "year": 2023,
+    "month": 12,
+    "set": 1,
+    "title": "健康饮食（政府重视）",
+    "topic_tags": ["food", "society", "economy"],
+    "source_cn": "中国政府十分重视人民的健康饮食（diet）。通过大力提倡健康饮食，人们对合理营养增进健康的重要性有了更加深刻的认识。“吃得安全、吃得营养、吃得健康”是人民对美好生活的基本需要，是提升人民幸福感的必然要求，也为食品产业的发展提供了新机遇。目前，各级政府都在采取多种举措确保人民饮食健康，推进健康中国的建设。",
+    "ref_en": "The Chinese government attaches great importance to a healthy diet for its people. By vigorously advocating a healthy diet, people have gained a deeper understanding of the importance of proper nutrition in health promotion. \"Eating safely, nutritiously and healthily\" is the people's basic demand for a good life, an inevitable requirement for enhancing people's sense of well-being, and also provides new opportunities for the development of the food industry. At present, governments at all levels are taking various measures to ensure people's healthy diet and promote the construction of a healthy China."
+  },
+  {
+    "year": 2023,
+    "month": 12,
+    "set": 2,
+    "title": "饮食变化（改革开放）",
+    "topic_tags": ["food", "society", "economy"],
+    "source_cn": "改革开放以来，中国人的饮食（diet）发生了显著变化。过去由于经济落后，食品种类有限、数量不足，人们仅仅满足于吃得饱。如今中国经济快速发展，食品不仅更加丰富多样，质量也大幅提高。随着生活水平不断提升，人们对饮食的要求越来越高，更加注重吃得营养健康。因此，目前市场上推出的低脂、低糖、有机食品受到人们的普遍欢迎。",
+    "ref_en": "Since the reform and opening-up, the Chinese people's diet has undergone significant changes. In the past, due to the backward economy, food was limited in variety and insufficient in quantity, and people were only satisfied with being full. Today, as China's economy develops rapidly, food is not only more diverse, but also of much higher quality. With the continuous improvement of living standards, people have increasingly higher requirements for their diet, and pay more attention to eating nutritiously and healthily. Therefore, the low-fat, low-sugar and organic foods launched on the market gain great popularity among people."
+  },
+  {
+    "year": 2023,
+    "month": 12,
+    "set": 3,
+    "title": "饮食与生活水平",
+    "topic_tags": ["food", "society", "economy"],
+    "source_cn": "改革开放以来，中国人民生活水平不断提高，这在人们的饮食（diet）变化上得到充分体现。如今，人们不再满足于吃得饱，而是追求吃得更加安全、更加营养、更加健康，食物也愈来愈丰富多样，不再限于本地的农产品。物流业（logistics industry）的发展使人们很容易品尝到全国各地的特产。毫无疑问，食品质量与饮食结构的改善为增进人们健康提供了有力的保障。",
+    "ref_en": "Since the reform and opening up, the living standard of the Chinese people has been continuously improved, which is fully reflected in the change of people's diet. Today, people are no longer satisfied with eating enough, but are seeking to eat safer, more nutritious, healthier and more diverse foods, no longer limited to local produce. The development of the logistics industry has made it easy for people to taste specialties from all over the country. There is no doubt that the improvement of food quality and diet structure provides a strong guarantee for the promotion of people's health."
+  },
+  {
+    "year": 2024,
+    "month": 6,
+    "set": 1,
+    "title": "农历",
+    "topic_tags": ["culture", "history", "tradition"],
+    "source_cn": "农历（the lunar calendar）起源于数千年前的中国，根据太阳和月亮的运行规律制定。长期以来农历在农业生产和人们日常生活中发挥着重要作用。古人依据农历记录日期，安排农活，以便最有效地利用自然资源和气候条件，提高农作物的产量和质量。中国的春节、中秋节等传统节日的日期都基于农历。农历是中国传统文化的重要组成部分，当今依然广为使用。",
+    "ref_en": "The lunar calendar originated in China thousands of years ago, formulated based on the movement patterns of the sun and the moon. For a long time, the lunar calendar has played a significant role in agricultural production and people's daily lives. Ancient people recorded dates and arranged farm work according to the lunar calendar to make the most effective use of natural resources and climatic conditions, enhancing the yield and quality of crops. The dates of traditional Chinese festivals like the Spring Festival and the Mid-Autumn Festival are all based on the lunar calendar. The lunar calendar is an essential part of Chinese traditional culture and is still widely used today."
+  },
+  {
+    "year": 2024,
+    "month": 6,
+    "set": 2,
+    "title": "四合院",
+    "topic_tags": ["culture", "history", "tradition"],
+    "source_cn": "四合院（siheyuan）是中国一种传统的住宅建筑，其特点是房屋建造在一个院子的四周，将院子合围在中间。四合院通常冬暖夏凉，环境舒适，尤其适合大家庭居住。四合院在中国各地有多种类型，其中以北京的四合院最为典型。如今，随着现代城市的发展，传统的四合院已逐渐减少，但因其独特的建筑风格，四合院对中国文化的传承和中国历史的研究具有重要意义。",
+    "ref_en": "The siheyuan is a traditional Chinese residential architecture characterized by houses built around a central courtyard. It is typically warm in winter and cool in summer, providing a comfortable environment especially suitable for large families. The siheyuan comes in various types across China, with the Beijing siheyuan being the most typical. Nowadays, with the development of modern cities, traditional siheyuan have gradually decreased. However, due to its unique architectural style, the siheyuan is of great significance to the inheritance of Chinese culture and the study of Chinese history."
+  },
+  {
+    "year": 2024,
+    "month": 6,
+    "set": 3,
+    "title": "福字",
+    "topic_tags": ["culture", "tradition", "society"],
+    "source_cn": "汉语中的“福”字表示幸福和好运，是中国传统文化中最常用的吉祥（auspicious）符号之一。人们通常将一个大大的福字写在红纸上，寓意期盼家庭幸福、社会安定、国家昌盛。春节贴福字是民间由来已久的习俗。为了欢庆春节，家家户户都会将福字贴在门上或墙上，表达对幸福生活的期待。人们有时还将福字倒过来贴，表示幸福已到。",
+    "ref_en": "In Chinese, the character \"fu\" represents happiness and good luck, and it is one of the most commonly used auspicious symbols in traditional Chinese culture. People often write a large \"fu\" on red paper, symbolizing the expectation of family happiness, social stability, and national prosperity. Pasting the \"fu\" character during the Spring Festival is a long-established folk custom. To celebrate the Spring Festival, every household pastes the \"fu\" character on their doors or walls to express their expectations for a happy life. People sometimes even paste it upside down, indicating that happiness has arrived."
+  },
+  {
+    "year": 2025,
+    "month": 6,
+    "set": 1,
+    "title": "杂交水稻",
+    "topic_tags": ["technology", "economy", "society"],
+    "source_cn": "被誉为“杂交水稻之父”的袁隆平和他的科研团队克服重重困难，研发出了一种超级杂交水稻。这项技术获得了举世公认的巨大成功。通过这项技术的应用，水稻抗旱抗病能力更强，能适应不同的气候和土壤条件，产量可提高20%-30%。超级杂交水稻营养丰富，口感更佳。目前，这项技术已经在许多国家得到广泛应用，为全球粮食安全做出了重大贡献。",
+    "ref_en": "Yuan Longping, known as the \"Father of Hybrid Rice,\" and his research team overcame numerous difficulties to develop a super hybrid rice. This technology has achieved globally recognized great success. Through the application of this technology, rice has stronger drought and disease resistance, can adapt to different climatic and soil conditions, and its yield can be increased by 20% to 30%. Super hybrid rice is rich in nutrition and has a better taste. At present, this technology has been widely applied in many countries, making significant contributions to global food security."
+  },
+  {
+    "year": 2025,
+    "month": 6,
+    "set": 2,
+    "title": "冰雪大世界",
+    "topic_tags": ["economy", "society", "geography"],
+    "source_cn": "近年来，中国东北地区正在大力发展冰雪资源，例如哈尔滨利用丰富的冰雪资源，打造了独具特色的冰雪大世界，让游客在欣赏冰雪之美的同时也能体验当地独特的民俗文化。如今，曾经令人畏惧的冰天雪地正吸引着四面八方的游客，成为了备受欢迎的旅游胜地，冰雪资源也为当地的经济发展做出越来越大的贡献。",
+    "ref_en": "In recent years, northeast China has been vigorously developing ice-snow resources. For example, Harbin has built the unique Ice and Snow World by using its rich ice-snow resources, allowing tourists to appreciate the beauty of ice and snow while experiencing the local unique folk culture. Nowadays, the once daunting ice and snow are attracting tourists from all directions, becoming a popular tourist destination. Ice-snow resources are also making greater contributions to the local economic development."
+  },
+  {
+    "year": 2025,
+    "month": 6,
+    "set": 3,
+    "title": "15分钟便民生活圈",
+    "topic_tags": ["society", "economy"],
+    "source_cn": "近年来，中国越来越多的城市致力打造“15分钟便民生活圈”。生活在便民生活圈里的居民可以在15分钟步行范围内获得公共服务。便民生活圈配备便利店、公园、健身设施、图书馆、学校、社区食堂和诊所等。建立这样的生活圈有助于为居民提供更便捷、舒适、友好和宜人的生活环境，更好地满足多样化的城市居民需求，提高居民生活质量和幸福感。",
+    "ref_en": "In recent years, more and more cities in China have been committed to building \"15-minute convenient living circles\". Residents living in these circles can access public services within a 15-minute walking distance. Such living circles are equipped with convenience stores, parks, fitness facilities, libraries, schools, community canteens, clinics and so on. Establishing these circles helps provide residents with a more convenient, comfortable, friendly and pleasant living environment, better meet the diverse needs of urban residents, and improve their quality of life and happiness."
+  }
+]
