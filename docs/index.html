@@ -19,35 +19,33 @@
   .wrap{max-width:860px; margin:0 auto; padding:24px 16px 64px}
   header h1{font-size:22px; margin:0 0 2px}
   header .sub{color:var(--muted); font-size:14px; margin:0 0 18px}
-  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
-  /* 折叠按钮 */
   #toggleCal{
     display:inline-flex; align-items:center; gap:6px;
     border:1px solid var(--line); background:#fff; border-radius:10px;
-    padding:8px 14px; font-size:14px; color:var(--ink); cursor:pointer; margin-bottom:12px
+    padding:7px 13px; font-size:14px; color:var(--ink); cursor:pointer; margin-bottom:12px
   }
   #toggleCal:hover{background:var(--accent-soft); border-color:var(--accent)}
-  /* 日历 */
-  .cal-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px}
-  .cal-head span{font-weight:600; font-size:16px}
-  .cal-head button{
-    width:34px; height:34px; border:1px solid var(--line); background:#fff;
-    border-radius:9px; font-size:18px; cursor:pointer; color:var(--ink)
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  /* 周条 */
+  .dow{display:grid; grid-template-columns:repeat(7,30px); gap:4px; justify-content:center; margin-bottom:6px}
+  .dow span{text-align:center; font-size:11px; color:var(--muted)}
+  .strip{display:flex; gap:14px; overflow-x:auto; padding:2px 1px 6px; scroll-behavior:smooth; -webkit-overflow-scrolling:touch}
+  .strip::-webkit-scrollbar{height:6px}
+  .strip::-webkit-scrollbar-thumb{background:#d7dbe0; border-radius:3px}
+  .week{flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:4px}
+  .wklabel{font-size:10px; color:var(--muted); white-space:nowrap}
+  .wkrow{display:flex; gap:4px}
+  .wday{
+    width:30px; height:30px; border-radius:8px; font-size:12px;
+    display:flex; align-items:center; justify-content:center; user-select:none
   }
-  .cal-head button:hover{background:var(--accent-soft)}
-  .weekrow,.grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px}
-  .weekrow{margin-bottom:6px}
-  .weekrow span{text-align:center; font-size:12px; color:var(--muted)}
-  .day{
-    aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
-    border-radius:9px; font-size:14px; user-select:none
-  }
-  .day.other{visibility:hidden}
-  .day.none{color:#cfd3d8; background:#fafbfc}
-  .day.has{color:var(--ink); background:#fff; border:1px solid var(--line); cursor:pointer}
-  .day.has:hover{background:var(--accent-soft); border-color:var(--accent)}
-  .day.today{outline:2px solid var(--accent); outline-offset:-2px}
-  .day.sel{background:var(--accent)!important; color:#fff!important; border-color:var(--accent)!important}
+  .wday.other{visibility:hidden}
+  .wday.none{color:#cfd3d8; background:#fafbfc}
+  .wday.has{color:var(--ink); background:#fff; border:1px solid var(--line); cursor:pointer}
+  .wday.has:hover{background:var(--accent-soft); border-color:var(--accent)}
+  .wday.today{outline:2px solid var(--accent); outline-offset:-2px}
+  .wday.sel{background:var(--accent)!important; color:#fff!important; border-color:var(--accent)!important}
+  .hint{font-size:11px; color:var(--muted); text-align:center; margin-top:4px}
   /* 内容 */
   #subtitle{font-size:15px; color:var(--muted); margin:6px 2px 8px}
   #content{margin-top:8px}
@@ -56,8 +54,8 @@
   #content p{margin:0 0 12px}
   #content audio{width:100%; margin:10px 0 16px}
   #content .ph{color:var(--muted)}
-  .legend{display:flex; gap:16px; font-size:12px; color:var(--muted); margin:10px 2px 0}
-  .legend i{display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:4px}
+  .legend{display:flex; gap:16px; font-size:12px; color:var(--muted); margin:8px 2px 0; justify-content:center}
+  .legend i{display:inline-block; width:11px; height:11px; border-radius:3px; vertical-align:-1px; margin-right:4px}
   .legend .b{background:#fff; border:1px solid var(--line)}
   .legend .g{background:#fafbfc; border:1px solid var(--line)}
 </style>
@@ -71,10 +69,12 @@
 
   <button id="toggleCal">选择日期 ▾</button>
   <div id="calCard" class="card" style="display:none">
-    <div id="cal"></div>
+    <div class="dow"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+    <div id="cal" class="strip"></div>
+    <div class="hint">← 滑动查看其它周 →</div>
     <div class="legend">
-      <span><i class="b"></i>有记录（可点）</span>
-      <span><i class="g"></i>无记录（灰）</span>
+      <span><i class="b"></i>有记录</span>
+      <span><i class="g"></i>无记录</span>
     </div>
   </div>
 
@@ -97,49 +97,60 @@ function updateToggle(){
   toggleCal.textContent = calVisible ? '收起日期 ▴' : '选择日期 ▾';
   calCard.style.display = calVisible ? 'block' : 'none';
 }
-toggleCal.onclick = () => { calVisible = !calVisible; updateToggle(); };
+toggleCal.onclick = () => {
+  calVisible = !calVisible; updateToggle();
+  if(calVisible) scrollToCurrentWeek();
+};
 
-function monthMatrix(y, m){
-  const startOffset = (new Date(y, m, 1).getDay() + 6) % 7; // 周一为首
-  const days = new Date(y, m+1, 0).getDate();
-  const cells = [];
-  for(let i=0;i<startOffset;i++) cells.push(null);
-  for(let d=1; d<=days; d++) cells.push(d);
-  while(cells.length % 7 !== 0) cells.push(null);
-  return cells;
+// 周一为一周起点
+function weekStart(d){
+  const day = d.getDay(); // 0=Sun
+  const diff = (day === 0) ? -6 : (1 - day);
+  const s = new Date(d); s.setDate(d.getDate() + diff);
+  s.setHours(0,0,0,0);
+  return s;
 }
+function addWeeks(d, n){ const r = new Date(d); r.setDate(r.getDate() + 7*n); return r; }
+
+const WEEK_BEFORE = 12, WEEK_AFTER = 6;
 
 function renderCal(){
-  const cells = monthMatrix(curY, curM);
-  const wk = ['一','二','三','四','五','六','日'];
-  let html = '<div class="cal-head"><button id="prev">‹</button>'
-    + '<span>' + curY + '年' + (curM+1) + '月</span>'
-    + '<button id="next">›</button></div>';
-  html += '<div class="weekrow">' + wk.map(w=>'<span>'+w+'</span>').join('') + '</div>';
-  html += '<div class="grid">';
-  const todayStr = fmt(new Date());
-  cells.forEach(d=>{
-    if(d === null){ html += '<div class="day other"></div>'; return; }
-    const ds = curY + '-' + pad(curM+1) + '-' + pad(d);
-    const cls = ['day'];
-    if(!avail.has(ds)) cls.push('none'); else cls.push('has');
-    if(ds === todayStr) cls.push('today');
-    if(ds === selectedDate) cls.push('sel');
-    const attr = avail.has(ds) ? ' data-date="'+ds+'"' : '';
-    html += '<div class="'+cls.join(' ')+'"'+attr+'>'+d+'</div>';
-  });
-  html += '</div>';
+  const today = new Date();
+  const todayStr = fmt(today);
+  const base = weekStart(today);
+  let w = addWeeks(base, -WEEK_BEFORE);
+  const end = addWeeks(base, WEEK_AFTER);
+  let html = '';
+  while(w <= end){
+    const label = (w.getMonth()+1) + '/' + w.getDate();
+    let row = '<div class="wkrow">';
+    for(let i=0;i<7;i++){
+      const dd = new Date(w); dd.setDate(w.getDate() + i);
+      const ds = fmt(dd);
+      const cls = ['wday'];
+      if(!avail.has(ds)) cls.push('none'); else cls.push('has');
+      if(ds === todayStr) cls.push('today');
+      if(ds === selectedDate) cls.push('sel');
+      const attr = avail.has(ds) ? ' data-date="'+ds+'"' : '';
+      row += '<div class="'+cls.join(' ')+'"'+attr+'>'+dd.getDate()+'</div>';
+    }
+    row += '</div>';
+    html += '<div class="week" data-ws="'+fmt(w)+'"><div class="wklabel">'+label+'</div>'+row+'</div>';
+    w = addWeeks(w, 1);
+  }
   cal.innerHTML = html;
-  document.getElementById('prev').onclick = ()=>shiftMonth(-1);
-  document.getElementById('next').onclick = ()=>shiftMonth(1);
 }
 
-function shiftMonth(delta){
-  curM += delta;
-  if(curM < 0){ curM = 11; curY--; }
-  if(curM > 11){ curM = 0; curY++; }
-  renderCal();
+function scrollToCurrentWeek(){
+  const ws = fmt(weekStart(new Date()));
+  const el = cal.querySelector('.week[data-ws="'+ws+'"]');
+  if(el) el.scrollIntoView({inline:'center', block:'nearest'});
 }
+
+cal.addEventListener('click', e=>{
+  const t = e.target.closest('.wday.has');
+  if(t && t.dataset.date) loadArticle(t.dataset.date);
+});
 
 async function loadArticle(date){
   selectedDate = date;
@@ -161,13 +172,8 @@ async function loadArticle(date){
 function showPlaceholder(){
   document.getElementById('subtitle').textContent = '';
   document.getElementById('content').innerHTML =
-    '<p class="ph">今日文章尚未生成。点「选择日期」展开日历，查看黑色有记录日期。</p>';
+    '<p class="ph">今日文章尚未生成。点「选择日期」展开周历，滑动查看黑色有记录日期。</p>';
 }
-
-cal.addEventListener('click', e=>{
-  const t = e.target.closest('.day.has');
-  if(t && t.dataset.date) loadArticle(t.dataset.date);
-});
 
 async function init(){
   try{
@@ -185,7 +191,7 @@ async function init(){
   const hash = location.hash.replace('#','');
   if(hash && avail.has(hash)) target = hash;
   else if(avail.has(fmt(now))) target = fmt(now);
-  else if(articles.length) target = articles[0].date; // 最新（降序首条）
+  else if(articles.length) target = articles[0].date;
   renderCal();
   updateToggle();
   if(target) loadArticle(target); else showPlaceholder();
