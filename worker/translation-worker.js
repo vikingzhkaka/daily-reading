@@ -31,7 +31,12 @@ async function ghRead(owner, name, path, pat) {
   if (r.status === 404) return null;
   if (!r.ok) throw new Error(`ghRead ${path} -> ${r.status} ${await r.text()}`);
   const j = await r.json();
-  return { content: j.content, sha: j.sha, decoded: atob(j.content) };
+  // base64 -> 字节 -> UTF-8 字符串（atob 出来的是二进制串，必须转回 UTF-8）
+  const bin = atob(j.content);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  const text = new TextDecoder().decode(bytes);
+  return { content: j.content, sha: j.sha, decoded: text };
 }
 
 // 通用 GitHub 写入文件（创建或更新）
