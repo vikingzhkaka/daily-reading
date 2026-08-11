@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<base href="/daily-reading/" />
 <title>每日阅读 · 英语学习文章与音频</title>
 <style>
   :root{
@@ -19,6 +20,13 @@
   header h1{font-size:22px; margin:0 0 2px}
   header .sub{color:var(--muted); font-size:14px; margin:0 0 18px}
   .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  /* 折叠按钮 */
+  #toggleCal{
+    display:inline-flex; align-items:center; gap:6px;
+    border:1px solid var(--line); background:#fff; border-radius:10px;
+    padding:8px 14px; font-size:14px; color:var(--ink); cursor:pointer; margin-bottom:12px
+  }
+  #toggleCal:hover{background:var(--accent-soft); border-color:var(--accent)}
   /* 日历 */
   .cal-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px}
   .cal-head span{font-weight:600; font-size:16px}
@@ -41,7 +49,7 @@
   .day.today{outline:2px solid var(--accent); outline-offset:-2px}
   .day.sel{background:var(--accent)!important; color:#fff!important; border-color:var(--accent)!important}
   /* 内容 */
-  #subtitle{font-size:15px; color:var(--muted); margin:18px 2px 6px}
+  #subtitle{font-size:15px; color:var(--muted); margin:6px 2px 8px}
   #content{margin-top:8px}
   #content h1{font-size:21px; margin:6px 0 14px}
   #content h2{font-size:17px; margin:22px 0 8px; color:#333}
@@ -61,7 +69,8 @@
     <p class="sub">英语学习文章与朗读音频 · 按日期回看</p>
   </header>
 
-  <div class="card">
+  <button id="toggleCal">选择日期 ▾</button>
+  <div id="calCard" class="card" style="display:none">
     <div id="cal"></div>
     <div class="legend">
       <span><i class="b"></i>有记录（可点）</span>
@@ -78,8 +87,17 @@ const avail = new Set();
 let articles = [];
 let curY, curM, selectedDate = null;
 const cal = document.getElementById('cal');
+const calCard = document.getElementById('calCard');
+const toggleCal = document.getElementById('toggleCal');
+let calVisible = false;
 const pad = n => (n < 10 ? '0' + n : '' + n);
 const fmt = dt => dt.getFullYear() + '-' + pad(dt.getMonth()+1) + '-' + pad(dt.getDate());
+
+function updateToggle(){
+  toggleCal.textContent = calVisible ? '收起日期 ▴' : '选择日期 ▾';
+  calCard.style.display = calVisible ? 'block' : 'none';
+}
+toggleCal.onclick = () => { calVisible = !calVisible; updateToggle(); };
 
 function monthMatrix(y, m){
   const startOffset = (new Date(y, m, 1).getDay() + 6) % 7; // 周一为首
@@ -127,7 +145,7 @@ async function loadArticle(date){
   selectedDate = date;
   renderCal();
   const a = articles.find(x => x.date === date);
-  const meta = a ? ('　·　新学 ' + a.new + ' / 复习 ' + a.review) : '';
+  const meta = a ? (' · 新学 ' + a.new + ' / 复习 ' + a.review) : '';
   document.getElementById('subtitle').textContent = date + meta;
   try{
     const res = await fetch('articles/' + date + '.html');
@@ -143,7 +161,7 @@ async function loadArticle(date){
 function showPlaceholder(){
   document.getElementById('subtitle').textContent = '';
   document.getElementById('content').innerHTML =
-    '<p class="ph">今日文章尚未生成。点上方黑色日期查看历史记录。</p>';
+    '<p class="ph">今日文章尚未生成。点「选择日期」展开日历，查看黑色有记录日期。</p>';
 }
 
 cal.addEventListener('click', e=>{
@@ -169,6 +187,7 @@ async function init(){
   else if(avail.has(fmt(now))) target = fmt(now);
   else if(articles.length) target = articles[0].date; // 最新（降序首条）
   renderCal();
+  updateToggle();
   if(target) loadArticle(target); else showPlaceholder();
 }
 init();
