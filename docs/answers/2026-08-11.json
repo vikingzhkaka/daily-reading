@@ -1,0 +1,11 @@
+{
+  "date": "2026-08-11",
+  "answer": "The Great Wall is China symbol, it attract million tourist every year.",
+  "submitted_at": "2026-08-11T10:00:00",
+  "result": {
+    "html": "<audio controls preload=\"none\" src=\"audio/20260811_translation_audio.mp3\">你的浏览器不支持音频播放，请访问 GitHub 仓库下载音频。</audio>\n<h1>翻译练习 · 测试自动批改</h1>\n<h2>原题（中文）</h2>\n<p>长城是中国的象征，每年吸引数百万游客。</p>\n<h2>你的译文</h2>\n<p>The Great Wall is China symbol, it attract million tourist every year.</p>\n<h2>批改</h2>\n<p>学生译文存在多处语法错误：1) “China symbol”应为“a symbol of China”，缺少冠词“a”和介词“of”；2) “it attract”中动词“attract”应改为“attracts”，主谓一致有误；3) “million tourist”中“tourist”应为复数“tourists”，且“million”前应加“millions of”或“a million”；4) 两个分句用逗号连接，缺少连词，最好用“and”连接。另外，“attract”和“visitors”搭配更自然，原句“tourist”稍显生硬。建议注意基本语法和冠词使用。</p>\n<h2>参考译文</h2>\n<p>The Great Wall is a symbol of China, attracting millions of tourists every year.</p>",
+    "comment": "学生译文存在多处语法错误：1) “China symbol”应为“a symbol of China”，缺少冠词“a”和介词“of”；2) “it attract”中动词“attract”应改为“attracts”，主谓一致有误；3) “million tourist”中“tourist”应为复数“tourists”，且“million”前应加“millions of”或“a million”；4) 两个分句用逗号连接，缺少连词，最好用“and”连接。另外，“attract”和“visitors”搭配更自然，原句“tourist”稍显生硬。建议注意基本语法和冠词使用。",
+    "ref_en": "The Great Wall is a symbol of China, attracting millions of tourists every year.",
+    "graded_at": "2026-08-11T17:34:45"
+  }
+}
