@@ -109,6 +109,7 @@ let byDate = {};
 let exercises = {};   // date -> {title, source_cn, ref_en, topic_tags}
 let answers = {};     // date -> {answer, submitted_at, result?}
 let curY, curM, selectedDate = null, selectedType = null;
+const SESS_KEY = 'dr_sel_date';
 const cal = document.getElementById('cal');
 const calCard = document.getElementById('calCard');
 const toggleCal = document.getElementById('toggleCal');
@@ -293,8 +294,9 @@ async function newExercise(){
 const newExBtn = document.getElementById('newEx');
 if(newExBtn) newExBtn.onclick = () => newExercise();
 
-async function loadArticle(date, type){
+async function loadArticle(date, type, record){
   selectedDate = date;
+  if(record !== false){ try{ sessionStorage.setItem(SESS_KEY, date); }catch(e){} }
   const list = byDate[date] || [];
   if(!type) type = (list.find(a=>a.type==='reading') || list[0] || {}).type;
   selectedType = type;
@@ -356,15 +358,18 @@ async function init(){
   }catch(e){}
   const now = new Date();
   curY = now.getFullYear(); curM = now.getMonth();
+  const todayStr = fmt(now);
   let target = null, targetType = null;
   const parts = location.hash.replace('#','').split('/');
   const hashDate = parts[0], hashType = parts[1];
-  if(hashDate && (avail.has(hashDate)||exercises[hashDate])){ target = hashDate; targetType = hashType; }
-  else if(avail.has(fmt(now))){ target = fmt(now); }
+  const picked = (()=>{ try{ return sessionStorage.getItem(SESS_KEY); }catch(e){ return null; } })();
+  if(picked && (avail.has(picked)||exercises[picked])){ target = picked; targetType = hashType; }
+  else if(avail.has(todayStr)){ target = todayStr; }
+  else if(hashDate && (avail.has(hashDate)||exercises[hashDate])){ target = hashDate; targetType = hashType; }
   else if(articles.length){ target = articles[0].date; }
   renderCal();
   updateToggle();
-  if(target) loadArticle(target, targetType); else showPlaceholder();
+  if(target) loadArticle(target, targetType, false); else showPlaceholder();
 }
 init();
 </script>
