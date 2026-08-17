@@ -31,7 +31,11 @@
       "date": "2026-08-14",
       "type": "reading",
       "new": 103,
-      "review": 117
+      "review": 117,
+      "exam": {
+        "title": "Bringing Nature Back to the City",
+        "html": "2026-08-14.exam.html"
+      }
     },
     {
       "date": "2026-08-13",
