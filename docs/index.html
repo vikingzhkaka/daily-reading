@@ -9,7 +9,7 @@
   :root{
     --bg:#f7f8fa; --card:#ffffff; --ink:#1a1a1a; --muted:#9aa0a6;
     --line:#e3e6ea; --accent:#2b7a4b; --accent-soft:#e8f3ec;
-    --reading:#2f6fed; --translation:#e8842b; --writing:#8b5cf6;
+    --reading:#2f6fed; --translation:#e8842b; --writing:#8b5cf6; --exam:#2b7a4b;
   }
   *{box-sizing:border-box}
   body{
@@ -72,6 +72,7 @@
   .legend .reading{background:var(--reading)}
   .legend .translation{background:var(--translation)}
   .legend .writing{background:var(--writing)}
+  .legend .exam{background:var(--exam)}
   .legend .todo{border:1px dashed var(--translation)}
 </style>
 </head>
@@ -92,6 +93,7 @@
       <span><i class="reading"></i>阅读</span>
       <span><i class="translation"></i>翻译</span>
       <span><i class="writing"></i>写作</span>
+      <span><i class="exam"></i>真题风</span>
       <span><i class="todo"></i>待做</span>
       <span><i class="g"></i>无记录</span>
     </div>
@@ -122,8 +124,8 @@ const NEW_EX_URL = (location.hostname === '127.0.0.1' || location.hostname === '
   ? 'http://127.0.0.1:8787/new-exercise' : CLOUD_BASE + '/api/new-exercise';
 const pad = n => (n < 10 ? '0' + n : '' + n);
 const fmt = dt => dt.getFullYear() + '-' + pad(dt.getMonth()+1) + '-' + pad(dt.getDate());
-const TYPE_LABEL = {reading:'阅读', translation:'翻译', writing:'写作'};
-const TYPE_COLOR = {reading:'#2f6fed', translation:'#e8842b', writing:'#8b5cf6'};
+const TYPE_LABEL = {reading:'阅读', translation:'翻译', writing:'写作', exam:'真题风'};
+const TYPE_COLOR = {reading:'#2f6fed', translation:'#e8842b', writing:'#8b5cf6', exam:'#2b7a4b'};
 
 function updateToggle(){
   toggleCal.textContent = calVisible ? '收起日期 ▴' : '选择日期 ▾';
@@ -162,10 +164,14 @@ function renderCal(){
       if(ds === todayStr) cls.push('today');
       if(ds === selectedDate) cls.push('sel');
       let dots = '';
-      const types = (byDate[ds]||[]).map(a=>a.type);
-      if(types.length){
-        dots = '<div class="dots">' + types.map(t =>
-          '<i class="dot" style="background:'+TYPE_COLOR[t]+'"></i>').join('') + '</div>';
+      const entries = byDate[ds] || [];
+      const types = entries.map(a=>a.type);
+      const hasExam = entries.some(a=>a.exam);
+      if(types.length || hasExam){
+        const dotColors = types.map(t=>TYPE_COLOR[t]);
+        if(hasExam) dotColors.push(TYPE_COLOR.exam);
+        dots = '<div class="dots">' + dotColors.map(c =>
+          '<i class="dot" style="background:'+c+'"></i>').join('') + '</div>';
       } else if(exercises[ds] && !answers[ds]){
         // 有题待做：虚线橙点
         dots = '<div class="dots"><i class="dot" style="background:transparent;border:1px dashed '+TYPE_COLOR.translation+'"></i></div>';
@@ -193,9 +199,14 @@ cal.addEventListener('click', e=>{
 
 function renderTabs(date, type){
   const list = byDate[date] || [];
-  if(list.length <= 1){ tabsEl.innerHTML = ''; return; }
-  tabsEl.innerHTML = list.map(a =>
-    '<button class="tab'+(a.type===type?' on':'')+'" data-type="'+a.type+'">'+TYPE_LABEL[a.type]+'</button>'
+  const reading = list.find(a=>a.type==='reading');
+  const pieces = [];
+  if(reading) pieces.push({type:'reading', label:TYPE_LABEL.reading});
+  if(reading && reading.exam) pieces.push({type:'exam', label:'真题风'});
+  list.filter(a=>a.type!=='reading').forEach(a=>pieces.push({type:a.type, label:TYPE_LABEL[a.type]}));
+  if(pieces.length <= 1){ tabsEl.innerHTML = ''; return; }
+  tabsEl.innerHTML = pieces.map(p =>
+    '<button class="tab'+(p.type===type?' on':'')+'" data-type="'+p.type+'">'+p.label+'</button>'
   ).join('');
 }
 tabsEl.addEventListener('click', e=>{
@@ -309,7 +320,13 @@ async function loadArticle(date, type, record){
     window.scrollTo({top:0, behavior:'smooth'});
     return;
   }
-  document.getElementById('subtitle').textContent = date + ' · ' + TYPE_LABEL[type] + metaLine(a);
+  if(type === 'exam'){
+    const ex = (byDate[date]||[]).find(a=>a.type==='reading');
+    const exTitle = ex && ex.exam ? ex.exam.title : '';
+    document.getElementById('subtitle').textContent = date + ' · 真题风' + (exTitle ? ' · ' + exTitle : '');
+  } else {
+    document.getElementById('subtitle').textContent = date + ' · ' + TYPE_LABEL[type] + metaLine(a);
+  }
   try{
     const res = await fetch('articles/' + date + '.' + type + '.html');
     if(!res.ok) throw new Error('not found');

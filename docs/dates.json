@@ -55,7 +55,11 @@
       "date": "2026-08-10",
       "new": 73,
       "review": 47,
-      "type": "reading"
+      "type": "reading",
+      "exam": {
+        "title": "The Science of Sleep",
+        "html": "2026-08-10.exam.html"
+      }
     },
     {
       "date": "2026-08-09",
