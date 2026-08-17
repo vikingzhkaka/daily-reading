@@ -5,7 +5,11 @@
       "date": "2026-08-17",
       "type": "reading",
       "new": 93,
-      "review": 127
+      "review": 127,
+      "exam": {
+        "title": "The Rise of Remote Work",
+        "html": "2026-08-17.exam.html"
+      }
     },
     {
       "date": "2026-08-16",
