@@ -43,7 +43,11 @@
       "date": "2026-08-12",
       "type": "reading",
       "new": 438,
-      "review": 63
+      "review": 63,
+      "exam": {
+        "title": "Learning by Working Together",
+        "html": "2026-08-12.exam.html"
+      }
     },
     {
       "date": "2026-08-11",
