@@ -1,6 +1,12 @@
 {
-  "latest": "2026-08-15",
+  "latest": "2026-08-17",
   "articles": [
+    {
+      "date": "2026-08-17",
+      "type": "reading",
+      "new": 93,
+      "review": 127
+    },
     {
       "date": "2026-08-15",
       "type": "reading",
