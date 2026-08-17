@@ -21,7 +21,11 @@
       "date": "2026-08-15",
       "type": "reading",
       "new": 29,
-      "review": 209
+      "review": 209,
+      "exam": {
+        "title": "Smartphones and the Art of Attention",
+        "html": "2026-08-15.exam.html"
+      }
     },
     {
       "date": "2026-08-14",
