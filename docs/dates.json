@@ -15,7 +15,11 @@
       "date": "2026-08-16",
       "type": "reading",
       "new": 119,
-      "review": 101
+      "review": 101,
+      "exam": {
+        "title": "Learning to Be Neighbors Again",
+        "html": "2026-08-16.exam.html"
+      }
     },
     {
       "date": "2026-08-15",
