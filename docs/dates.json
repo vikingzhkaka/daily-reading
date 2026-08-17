@@ -37,7 +37,11 @@
       "date": "2026-08-13",
       "type": "reading",
       "new": 127,
-      "review": 93
+      "review": 93,
+      "exam": {
+        "title": "The Teacher Who Stayed",
+        "html": "2026-08-13.exam.html"
+      }
     },
     {
       "date": "2026-08-12",
