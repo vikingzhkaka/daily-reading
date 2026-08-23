@@ -1,6 +1,16 @@
 {
-  "latest": "2026-08-22",
+  "latest": "2026-08-23",
   "articles": [
+    {
+      "date": "2026-08-23",
+      "type": "reading",
+      "new": 17,
+      "review": 416,
+      "exam": {
+        "title": "The Quiet Boom of Secondhand Shopping Among the Young",
+        "html": "2026-08-23.exam.html"
+      }
+    },
     {
       "date": "2026-08-22",
       "type": "reading",
