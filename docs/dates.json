@@ -1,6 +1,16 @@
 {
-  "latest": "2026-08-23",
+  "latest": "2026-08-24",
   "articles": [
+    {
+      "date": "2026-08-24",
+      "type": "reading",
+      "new": 13,
+      "review": 464,
+      "exam": {
+        "title": "Why Your Brain Needs Sleep",
+        "html": "2026-08-24.exam.html"
+      }
+    },
     {
       "date": "2026-08-23",
       "type": "reading",
