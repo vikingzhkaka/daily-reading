@@ -1,6 +1,16 @@
 {
-  "latest": "2026-08-25",
+  "latest": "2026-08-26",
   "articles": [
+    {
+      "date": "2026-08-26",
+      "type": "reading",
+      "new": 26,
+      "review": 194,
+      "exam": {
+        "title": "Why Students on Campus Are Studying Together More Than Ever",
+        "html": "2026-08-26.exam.html"
+      }
+    },
     {
       "date": "2026-08-25",
       "type": "reading",
