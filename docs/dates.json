@@ -1,6 +1,11 @@
 {
-  "latest": "2026-08-26",
+  "latest": "2026-08-27",
   "articles": [
+    {
+      "date": "2026-08-27",
+      "type": "exam",
+      "title": "The Teacher Who Turned a Bus into a Library"
+    },
     {
       "date": "2026-08-26",
       "type": "reading",

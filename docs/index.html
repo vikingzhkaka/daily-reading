@@ -322,7 +322,7 @@ async function loadArticle(date, type, record){
   }
   if(type === 'exam'){
     const ex = (byDate[date]||[]).find(a=>a.type==='reading');
-    const exTitle = ex && ex.exam ? ex.exam.title : '';
+    const exTitle = (ex && ex.exam ? ex.exam.title : '') || (a && a.title) || '';
     document.getElementById('subtitle').textContent = date + ' · 真题风' + (exTitle ? ' · ' + exTitle : '');
   } else {
     document.getElementById('subtitle').textContent = date + ' · ' + TYPE_LABEL[type] + metaLine(a);
