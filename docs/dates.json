@@ -1,6 +1,16 @@
 {
-  "latest": "2026-08-27",
+  "latest": "2026-08-28",
   "articles": [
+    {
+      "date": "2026-08-28",
+      "type": "reading",
+      "new": 23,
+      "review": 317,
+      "exam": {
+        "title": "Green Roofs: How Cities Are Cooling Themselves Down",
+        "html": "2026-08-28.exam.html"
+      }
+    },
     {
       "date": "2026-08-27",
       "type": "exam",
