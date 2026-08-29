@@ -1,6 +1,11 @@
 {
-  "latest": "2026-08-28",
+  "latest": "2026-08-29",
   "articles": [
+    {
+      "date": "2026-08-29",
+      "type": "exam",
+      "title": "When Screens Replace the Dinner Table"
+    },
     {
       "date": "2026-08-28",
       "type": "reading",
