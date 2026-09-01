@@ -1,6 +1,16 @@
 {
-  "latest": "2026-08-31",
+  "latest": "2026-09-01",
   "articles": [
+    {
+      "date": "2026-09-01",
+      "type": "reading",
+      "new": 21,
+      "review": 524,
+      "exam": {
+        "title": "When Algorithms Rewrite the Reading Habit",
+        "html": "2026-09-01.exam.html"
+      }
+    },
     {
       "date": "2026-08-31",
       "type": "reading",
