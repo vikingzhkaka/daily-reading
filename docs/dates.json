@@ -1,6 +1,16 @@
 {
-  "latest": "2026-09-01",
+  "latest": "2026-09-02",
   "articles": [
+    {
+      "date": "2026-09-02",
+      "type": "reading",
+      "new": 16,
+      "review": 561,
+      "exam": {
+        "title": "When the City Lost Its Shine",
+        "html": "2026-09-02.exam.html"
+      }
+    },
     {
       "date": "2026-09-01",
       "type": "reading",
